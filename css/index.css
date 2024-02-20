@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+:root {
+    --silver: #c0c0c0;
+    --white: #ffffff;
+    --black: #000000;
+    --bg: #121317;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    background-image: url("../images/jpg/space-bg.jpg");
+    background-size: cover;
+    background-position: center center; 
+    font-family: "Poppins", Arial, Helvetica, sans-serif;
+}
+
+a {
+    text-decoration: none;
+    padding: 0 0.5em;
+}
+
+nav {
+    padding: 1em 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    font-size: 1.25rem;
+    flex-wrap: wrap;
+}
+
+.nav-item {
+    padding: 0.5em 0.85em;
+}
+
+.nav-link {
+    display: block;
+    color: var(--white);
+    border-radius: 0.1em;
+    box-shadow: inset 0 0 0 0 var(--white);
+    transition: all 300ms;
+    will-change: translate;
+
+}
+
+.nav-link:hover {
+    color: var(--bg);
+    box-shadow: inset 200px 0 0 0 var(--white);
+    translate: 0 -12%;
+}
