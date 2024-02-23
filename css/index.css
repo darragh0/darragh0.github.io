@@ -1,57 +1,145 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-
-:root {
-    --silver: #c0c0c0;
-    --white: #ffffff;
-    --black: #000000;
-    --bg: #121317;
+.bg-grey-darker {
+  background: #212020;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+.bg-grey-dark {
+  background: #323232;
 }
 
-
-body {
-    background-image: url("../images/jpg/space-bg.jpg");
-    background-size: cover;
-    background-position: center center; 
-    font-family: "Poppins", Arial, Helvetica, sans-serif;
+.bg-grey-reg {
+  background: #464646;
 }
 
-a {
-    text-decoration: none;
-    padding: 0 0.5em;
+.bg-grey-light {
+  background: #5c5c5c;
 }
 
 nav {
-    padding: 1em 0 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    justify-items: center;
-    font-size: 1.25rem;
-    flex-wrap: wrap;
+  background: #212020;
+  padding: 1em 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  font-size: 1.5rem;
 }
 
 .nav-item {
-    padding: 0.5em 0.85em;
+  padding: 0.5em 0.85em;
 }
 
 .nav-link {
-    display: block;
-    color: var(--white);
-    border-radius: 0.1em;
-    box-shadow: inset 0 0 0 0 var(--white);
-    transition: all 300ms;
-    will-change: translate;
-
+  display: block;
+  text-decoration: none;
+  color: #ffffff;
+  border-radius: 0.1em;
+  padding: 0 0.5em 0.1em;
+  transition: ease-out 0.4s;
 }
-
 .nav-link:hover {
-    color: var(--bg);
-    box-shadow: inset 200px 0 0 0 var(--white);
-    translate: 0 -12%;
+  color: #212020;
+  box-shadow: inset 400px 0 0 0 #ffffff;
+  translate: 0 -15%;
 }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: white;
+  color: #ffffff;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  overflow-x: hidden;
+}
+
+section {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 100px 20vw;
+  text-align: justify;
+}
+
+.section-1 {
+  background: #212020;
+  min-height: 600px;
+  padding-top: 200px;
+}
+.section-1 .wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+  margin-bottom: -1px;
+}
+.section-1 .wave svg {
+  position: relative;
+  display: block;
+  width: calc(127% + 1.3px);
+  height: 124px;
+}
+.section-1 .wave .shape-fill {
+  fill: #323232;
+}
+
+.section-2 {
+  background: #323232;
+  min-height: 800px;
+  padding-top: 300px;
+}
+.section-2 .wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  margin-bottom: -1px;
+}
+.section-2 .wave svg {
+  position: relative;
+  display: block;
+  width: calc(158% + 1.3px);
+  height: 96px;
+}
+.section-2 .wave .shape-fill {
+  fill: #464646;
+}
+
+.section-3 {
+  background: #464646;
+  min-height: 800px;
+  padding-top: 250px;
+}
+.section-3 .wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+  margin-bottom: -1px;
+}
+.section-3 .wave svg {
+  position: relative;
+  display: block;
+  width: calc(130% + 1.3px);
+  height: 133px;
+}
+.section-3 .wave .shape-fill {
+  fill: #5c5c5c;
+}
+
+.section-4 {
+  min-height: 600px;
+  padding-top: 300px;
+  background: #5c5c5c;
+}/*# sourceMappingURL=index.css.map */

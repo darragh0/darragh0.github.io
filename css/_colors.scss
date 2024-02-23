@@ -1,0 +1,22 @@
+$white: #ffffff;
+$black: #000000;
+$grey-darker: #212020;
+$grey-dark: #323232;
+$grey-reg: #464646;
+$grey-light: #5c5c5c;
+
+.bg-grey-darker {
+    background: $grey-darker;
+}
+
+.bg-grey-dark {
+    background: $grey-dark;
+}
+
+.bg-grey-reg {
+    background: $grey-reg;
+}
+
+.bg-grey-light {
+    background: $grey-light;
+}
