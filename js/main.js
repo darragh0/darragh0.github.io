@@ -22,4 +22,13 @@ $(document).ready(() => {
         }
     });
 
+    const observer = new IntersectionObserver(entries => {
+        if (entries[0].isIntersecting) {
+            $("#ise-logo img").animate({translate: "0", opacity: "1"}, 600)
+            observer.disconnect();
+        }
+    });
+      
+    observer.observe(document.querySelector('#ise-logo'));
+
 });

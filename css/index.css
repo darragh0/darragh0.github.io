@@ -2,12 +2,15 @@ nav {
   display: grid;
   grid-template-columns: 1fr repeat(3, auto) 1fr;
   justify-items: center;
-  background: #070f2b;
-  padding: 1em 0;
-  font-size: 1.5rem;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.05);
+  -webkit-backdrop-filter: blur(100px);
+          backdrop-filter: blur(100px);
+  padding: 0.35em 0;
+  font-size: 1.15rem;
 }
 nav div {
-  padding: 0.5em 0.85em;
+  padding: 0.5em;
 }
 nav div:first-child {
   grid-column-start: 2;
@@ -16,11 +19,12 @@ nav div:last-child {
   margin-left: auto;
 }
 nav div a {
+  font-size: 1.5rem;
   display: inline-block;
   color: #ffffff;
-  padding: 0 0.5em 0.1em;
+  padding: 0 0.75em 0.1em;
   border-radius: 0.1em;
-  transition: all ease-out 400ms;
+  transition: all ease-out 350ms;
 }
 
 .nav-center {
@@ -29,7 +33,7 @@ nav div a {
 
 .nav-center a:hover {
   translate: 0 -15%;
-  color: #070f2b;
+  color: #0b0715;
   box-shadow: inset 400px 0 0 0 #ffffff;
   text-decoration: none;
 }
@@ -38,6 +42,7 @@ nav div a {
   text-decoration: underline;
   text-decoration-thickness: 0.05em;
   text-underline-position: under;
+  text-underline-offset: 0.1em;
 }
 
 #hamburger {
@@ -92,17 +97,27 @@ nav div a {
     text-align: center;
   }
 }
+footer {
+  padding: 1em;
+  text-align: center;
+}
+footer a {
+  font-size: 1.5rem;
+  color: #0b0715;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body {
   background-color: white;
   color: #ffffff;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   overflow-x: hidden;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 a {
@@ -114,98 +129,102 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 10%;
   text-align: justify;
 }
 
-.section-1 {
-  background: #070f2b;
-  min-height: 400px;
-  padding-top: 5%;
-  padding-bottom: 15%;
-}
-.section-1 .wave {
+.wave {
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
   overflow: hidden;
   line-height: 0;
+  margin-bottom: -1px;
+}
+
+svg {
+  position: relative;
+  display: block;
+}
+
+#section-1 {
+  background-image: url("../images/jpg/space-bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 0 0 11em;
+}
+#section-1 .wave {
   transform: rotate(180deg);
-  margin-bottom: -1px;
 }
-.section-1 .wave svg {
-  position: relative;
-  display: block;
-  width: calc(127% + 1.3px);
-  height: 124px;
+#section-1 .wave svg {
+  width: calc(111% + 1.3px);
+  height: 12.5em;
 }
-.section-1 .wave .shape-fill {
-  fill: #1b1a55;
-}
-.section-1 header h1 {
-  text-align: left;
-  font-size: 4rem;
-  padding-bottom: 2em;
+#section-1 .wave .shape-fill {
+  fill: #0b0715;
 }
 
-.section-2 {
-  background: #1b1a55;
-  min-height: 800px;
-  padding-top: 300px;
+header {
+  padding: 10em 1em;
 }
-.section-2 .wave {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  overflow: hidden;
-  line-height: 0;
-  margin-bottom: -1px;
+header h1 {
+  text-align: center;
+  font-size: 3.75rem;
+  font-weight: 600;
 }
-.section-2 .wave svg {
-  position: relative;
-  display: block;
+header p {
+  padding: 0.75em 2em 0;
+  text-align: center;
+  font-size: 1.05rem;
+}
+
+#section-2 {
+  background: #0b0715;
+  padding-bottom: 6em;
+}
+#section-2 svg {
   width: calc(158% + 1.3px);
-  height: 96px;
+  height: 6em;
 }
-.section-2 .wave .shape-fill {
-  fill: #535c91;
+#section-2 .shape-fill {
+  fill: #0f0e3a;
 }
 
-.section-3 {
-  background: #535c91;
+#about-me {
+  display: flex;
+  width: 100%;
+}
+#about-me div,
+#about-me aside {
+  flex: 1;
+  padding: 5em;
+}
+#about-me div {
+  padding: 7em 10em 13em;
+}
+#about-me div h2 {
+  font-size: 2.75rem;
+  font-weight: 400;
+  padding-bottom: 1em;
+}
+#about-me div p {
+  width: 45ch;
+  font-size: 1.1rem;
+}
+#about-me aside {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: center;
+}
+#about-me aside #ise-logo img {
+  opacity: 0;
+  translate: 50em;
+  width: 85%;
+}
+
+#section-3 {
+  background: #0f0e3a;
   min-height: 800px;
   padding-top: 250px;
-}
-.section-3 .wave {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  overflow: hidden;
-  line-height: 0;
-  transform: rotate(180deg);
-  margin-bottom: -1px;
-}
-.section-3 .wave svg {
-  position: relative;
-  display: block;
-  width: calc(130% + 1.3px);
-  height: 133px;
-}
-.section-3 .wave .shape-fill {
-  fill: #9290c3;
-}
-
-.section-4 {
-  min-height: 600px;
-  padding-top: 300px;
-  background: #9290c3;
-}
-
-@media only screen and (max-width: 600px) {
-  .section-1 header h1 {
-    text-align: center;
-  }
 }/*# sourceMappingURL=index.css.map */

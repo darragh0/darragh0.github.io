@@ -1,17 +1,24 @@
 @import "./colors";
 @import "./nav";
+@import "./footer";
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 body {
     background-color: white;
     color: $white;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     overflow-x: hidden;
+    font-family: system-ui, -apple-system,
+                 BlinkMacSystemFont, 'Segoe UI',
+                 Roboto, Oxygen,
+                 Ubuntu, Cantarell,
+                 'Open Sans', 'Helvetica Neue',
+                 sans-serif;
 }
 
 a {
@@ -23,109 +30,117 @@ section {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 10%;
     text-align: justify;
 }
 
-.section-1 {
-    background: $blue-darker;
-    min-height: 400px;
-    padding-top: 5%;
-    padding-bottom: 15%;
+.wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    margin-bottom: -1px;
+}
+
+svg {
+    position: relative;
+    display: block;
+}
+
+#section-1 {
+    background-image: url("../images/jpg/space-bg.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 0 0 11em;
 
     .wave {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        overflow: hidden;
-        line-height: 0;
         transform: rotate(180deg);
-        margin-bottom: -1px;
     
         svg {
-            position: relative;
-            display: block;
-            width: calc(127% + 1.3px);
-            height: 124px;
+            width: calc(111% + 1.3px);
+            height: 12.5em;
         }
         
         .shape-fill {
-            fill: $blue-dark;
+            fill: $space-black;
         }
     }    
+}
 
-    header h1 {
-        text-align: left;
-        font-size: 4rem;
-        padding-bottom: 2em;
+header {
+    padding: 10em 1em;
+
+    h1 {
+        text-align: center;
+        font-size: 3.75rem;
+        font-weight: 600;
+    }
+    
+    p {
+        padding: 0.75em 2em 0;
+        text-align: center;
+        font-size: 1.05rem;
     }
 }
 
-.section-2 {
-    background: $blue-dark;
-    min-height: 800px;
-    padding-top: 300px;
+#section-2 {
+    background: $space-black;
+    padding-bottom: 6em;  
 
-    .wave {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        overflow: hidden;
-        line-height: 0;
-        margin-bottom: -1px;
+    svg {
+        width: calc(158% + 1.3px);
+        height: 6em;
+    }
+    
+    .shape-fill {
+        fill: $space-blue;
+    }
+}
 
-        svg {
-            position: relative;
-            display: block;
-            width: calc(158% + 1.3px);
-            height: 96px;
+#about-me {
+    display: flex;
+    width: 100%;
+
+    div,
+    aside {
+        flex: 1;
+        padding: 5em;
+    }
+
+    div {
+        padding: 7em 10em 13em;
+
+        h2 {
+            font-size: 2.75rem;
+            font-weight: 400;
+            padding-bottom: 1em;
         }
-        
-        .shape-fill {
-            fill: $blue-light;
+
+        p {
+            width: 45ch;
+            font-size: 1.1rem;
+        }
+    }
+
+    aside {
+        display: flex;
+        flex-direction: column;
+        align-items: left;
+        justify-content: center;
+
+        #ise-logo {
+            img {
+                opacity: 0;
+                translate: 50em;
+                width: 85%;
+            }
         }
     }
 }
 
-.section-3 {
-    background: $blue-light;
+#section-3 {
+    background: $space-blue;
     min-height: 800px;
     padding-top: 250px;
-
-    .wave {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        overflow: hidden;
-        line-height: 0;
-        transform: rotate(180deg);
-        margin-bottom: -1px;
-
-        svg {
-            position: relative;
-            display: block;
-            width: calc(130% + 1.3px);
-            height: 133px;
-        }
-        
-        .shape-fill {
-            fill: $blue-lighter;
-        }
-    }
-}
-
-.section-4 {
-    min-height: 600px;
-    padding-top: 300px;
-    background: $blue-lighter;
-}
-
-@media only screen and (max-width: 600px) {
-
-    .section-1 header h1 {
-        text-align: center;
-    }
 }
