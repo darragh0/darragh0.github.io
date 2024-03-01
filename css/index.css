@@ -121,7 +121,8 @@ section {
 .section-1 {
   background: #070f2b;
   min-height: 400px;
-  padding-top: 100px;
+  padding-top: 5%;
+  padding-bottom: 15%;
 }
 .section-1 .wave {
   position: absolute;
