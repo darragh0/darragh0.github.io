@@ -1,30 +1,102 @@
 nav {
-    background: $grey-darker;
+    display: grid;
+    grid-template-columns: 1fr repeat(3, auto) 1fr;
+    justify-items: center;
+    background: $blue-darker;
     padding: 1em 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
     font-size: 1.5rem;
-}
 
-.nav-item {
-    padding: 0.5em 0.85em;
-}
+    div {
+        padding: 0.5em 0.85em;
 
-.nav-link {
-    display: block;
-    text-decoration: none;
-    color: $white;
-    border-radius: 0.1em;
-    padding: 0 0.5em 0.1em;
-    -webkit-transition: ease-out 0.4s;
-    -moz-transition: ease-out 0.4s;
-    transition: ease-out 0.4s;
+        &:first-child {
+            grid-column-start: 2;
+        }
 
-    &:hover {
-        color: $grey-darker;
-        box-shadow: inset 400px 0 0 0 $white;
-        translate: 0 -15%;
+        &:last-child {
+            margin-left: auto;
+        }
+
+        a {
+            display: inline-block;
+            color: $white;
+            padding: 0 0.5em 0.1em;
+            border-radius: 0.1em;
+            transition: all ease-out 400ms;
+        }
     }
+}
+
+.nav-center {
+    display: block;
+}
+
+.nav-center a:hover {
+    translate: 0 -15%;
+    color: $blue-darker;
+    box-shadow: inset 400px 0 0 0 $white;
+    text-decoration: none;
+}
+
+.nav-current a {
+    text-decoration: underline;
+    text-decoration-thickness: 0.05em;
+    text-underline-position: under;
+}
+
+#hamburger {
+    display: none;
+}
+
+#hamburger a {
+    transition: padding 200ms ease;
+}
+
+.hamburger-bar {
+    display: block; 
+    width: 1.35em;
+    height: 0.135em;
+    background-color: $white;
+    margin: 0.3em 0;
+    transition: all 200ms ease-in-out;
+}   
+
+.hamburger-x-padding {
+    padding: 0 0.1em 0.1em 0.5em;
+}
+  
+.hamburger-x:first-of-type {
+    transform: rotate(41.5deg);
+    transform-origin: top left;
+}
+
+.hamburger-x:nth-of-type(2) {
+    transform-origin: center;
+    width: 0;
+}
+
+.hamburger-x:last-of-type {
+    transform: rotate(-41.5deg);
+    transform-origin: bottom left;
+}
+
+@media only screen and (max-width: 600px) {
+
+    nav {
+        grid-template-columns: auto;
+    }
+
+    #hamburger {
+        display: inline-block;
+        grid-row-start: 1;
+        grid-column: span 2;
+    }   
+
+    .nav-center {
+        grid-column: span 2 !important;
+        display: none;
+        width: 100%;
+        text-align: center;
+    }
+
 }
