@@ -98,11 +98,11 @@ nav div a {
   }
 }
 footer {
-  padding: 1em;
+  padding: 0.5em;
   text-align: center;
 }
 footer a {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   color: #0b0715;
 }
 
@@ -176,6 +176,7 @@ header p {
   padding: 0.75em 2em 0;
   text-align: center;
   font-size: 1.05rem;
+  word-break: break-word;
 }
 
 #section-2 {
@@ -193,14 +194,15 @@ header p {
 #about-me {
   display: flex;
   width: 100%;
+  padding-bottom: 10em;
 }
 #about-me div,
 #about-me aside {
-  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50%;
   padding: 5em;
-}
-#about-me div {
-  padding: 7em 10em 13em;
 }
 #about-me div h2 {
   font-size: 2.75rem;
@@ -208,23 +210,33 @@ header p {
   padding-bottom: 1em;
 }
 #about-me div p {
-  width: 45ch;
+  max-width: 50ch;
+  min-width: 10ch;
   font-size: 1.1rem;
-}
-#about-me aside {
-  display: flex;
-  flex-direction: column;
-  align-items: left;
-  justify-content: center;
 }
 #about-me aside #ise-logo img {
   opacity: 0;
   translate: 50em;
-  width: 85%;
+  width: 100%;
 }
 
 #section-3 {
   background: #0f0e3a;
   min-height: 800px;
-  padding-top: 250px;
+  padding: 12em 5em;
+}
+
+@media only screen and (max-width: 900px) {
+  #about-me {
+    flex-direction: column;
+    gap: 5em;
+  }
+  #about-me div,
+  #about-me aside {
+    padding: 2em;
+    width: 100%;
+  }
+  #about-me div {
+    align-items: center;
+  }
 }/*# sourceMappingURL=index.css.map */
