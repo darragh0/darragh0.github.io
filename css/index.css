@@ -3,11 +3,8 @@ nav {
   grid-template-columns: 1fr repeat(3, auto) 1fr;
   justify-items: center;
   width: 100%;
-  background-color: rgba(255, 255, 255, 0.05);
-  -webkit-backdrop-filter: blur(100px);
-          backdrop-filter: blur(100px);
+  background-color: #262626;
   padding: 0.35em 0;
-  font-size: 1.15rem;
 }
 nav div {
   padding: 0.5em;
@@ -19,12 +16,11 @@ nav div:last-child {
   margin-left: auto;
 }
 nav div a {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   display: inline-block;
   color: #ffffff;
   padding: 0 0.75em 0.1em;
-  border-radius: 0.1em;
-  transition: all ease-out 350ms;
+  transition: color 150ms;
 }
 
 .nav-center {
@@ -32,10 +28,7 @@ nav div a {
 }
 
 .nav-center a:hover {
-  translate: 0 -15%;
-  color: #0b0715;
-  box-shadow: inset 400px 0 0 0 #ffffff;
-  text-decoration: none;
+  color: #5b5b5b;
 }
 
 .nav-current a {
@@ -97,15 +90,6 @@ nav div a {
     text-align: center;
   }
 }
-footer {
-  padding: 0.5em;
-  text-align: center;
-}
-footer a {
-  font-size: 1.25rem;
-  color: #0b0715;
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -114,8 +98,8 @@ footer a {
 }
 
 body {
-  background-color: white;
   color: #ffffff;
+  background-color: #333333;
   overflow-x: hidden;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
@@ -124,119 +108,20 @@ a {
   text-decoration: none;
 }
 
-section {
-  position: relative;
+header {
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: justify;
-}
-
-.wave {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  overflow: hidden;
-  line-height: 0;
-  margin-bottom: -1px;
-}
-
-svg {
-  position: relative;
-  display: block;
-}
-
-#section-1 {
-  background-image: url("../images/jpg/space-bg.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  padding: 0 0 11em;
-}
-#section-1 .wave {
-  transform: rotate(180deg);
-}
-#section-1 .wave svg {
-  width: calc(111% + 1.3px);
-  height: 12.5em;
-}
-#section-1 .wave .shape-fill {
-  fill: #0b0715;
-}
-
-header {
-  padding: 10em 1em;
+  justify-content: center;
+  gap: 1em;
+  padding: 15em;
+  text-align: center;
 }
 header h1 {
-  text-align: center;
-  font-size: 3.75rem;
+  font-size: 3.5rem;
   font-weight: 600;
 }
 header p {
-  padding: 0.75em 2em 0;
-  text-align: center;
   font-size: 1.05rem;
   word-break: break-word;
-}
-
-#section-2 {
-  background: #0b0715;
-  padding-bottom: 6em;
-}
-#section-2 svg {
-  width: calc(158% + 1.3px);
-  height: 6em;
-}
-#section-2 .shape-fill {
-  fill: #0f0e3a;
-}
-
-#about-me {
-  display: flex;
-  width: 100%;
-  padding-bottom: 10em;
-}
-#about-me div,
-#about-me aside {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 50%;
-  padding: 5em;
-}
-#about-me div h2 {
-  font-size: 2.75rem;
-  font-weight: 400;
-  padding-bottom: 1em;
-}
-#about-me div p {
-  max-width: 50ch;
-  min-width: 10ch;
-  font-size: 1.1rem;
-}
-#about-me aside #ise-logo img {
-  opacity: 0;
-  translate: 50em;
-  width: 100%;
-}
-
-#section-3 {
-  background: #0f0e3a;
-  min-height: 800px;
-  padding: 12em 5em;
-}
-
-@media only screen and (max-width: 900px) {
-  #about-me {
-    flex-direction: column;
-    gap: 5em;
-  }
-  #about-me div,
-  #about-me aside {
-    padding: 2em;
-    width: 100%;
-  }
-  #about-me div {
-    align-items: center;
-  }
 }/*# sourceMappingURL=index.css.map */

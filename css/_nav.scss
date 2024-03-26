@@ -3,10 +3,8 @@ nav {
     grid-template-columns: 1fr repeat(3, auto) 1fr;
     justify-items: center;
     width: 100%;
-    background-color: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(100px);
+    background-color: $dark-grey;
     padding: 0.35em 0;
-    font-size: 1.15rem;
 
     div {
         padding: 0.5em;
@@ -20,12 +18,11 @@ nav {
         }
 
         a {
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             display: inline-block;
             color: $white;
             padding: 0 0.75em 0.1em;
-            border-radius: 0.1em;
-            transition: all ease-out 350ms;
+            transition: color 150ms;
         }
     }
 }
@@ -35,10 +32,7 @@ nav {
 }
 
 .nav-center a:hover {
-    translate: 0 -15%;
-    color: $space-black;
-    box-shadow: inset 400px 0 0 0 $white;
-    text-decoration: none;
+    color: $light-grey;
 }
 
 .nav-current a {
