@@ -114,7 +114,7 @@ header {
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 15em 2em;
+  padding: 15em 10em;
 }
 header div:first-child h1 {
   display: inline;
