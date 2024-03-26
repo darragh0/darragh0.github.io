@@ -29,17 +29,37 @@ header {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 1em;
-    padding: 15em;
     text-align: center;
+    padding: 15em 2em;
 
-    h1 {
-        font-size: 3.5rem;
-        font-weight: 600;
+    div:first-child {
+    
+        h1 {
+            display: inline;
+            font-weight: 600;
+            font-size: 3.5rem;
+        }
+    
+        #caret {
+            opacity: 0;
+            font-weight: 100;
+            font-size: 3.5rem;
+        }
+
     }
     
-    p {
-        font-size: 1.05rem;
-        word-break: break-word;
+    div:last-child {
+    
+        p {
+            display: inline;
+            width: 100%;
+            margin-top: 1em;
+            font-size: 1.05rem;
+            word-break: break-word;
+        }
+
+        #header-description-caret {
+            opacity: 0;
+        }
     }
 }

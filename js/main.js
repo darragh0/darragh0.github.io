@@ -1,4 +1,10 @@
+import {type} from "./typewriter.js";
+
 $(document).ready(() => {
+
+    type($("#header"), $("#caret"), 50, 200, 0, () =>
+        type($("#header-description"), $("#header-description-caret"), 50, 250, 2_000)
+    );
 
     let count = 0;
     let x_disabled = true;
