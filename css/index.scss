@@ -87,3 +87,17 @@ header {
     opacity: 0;
     right: -0.2em;
 }
+
+
+@media only screen and (max-width: 600px) {
+    header div {
+        
+        &:first-child {
+            font-size: 3rem;
+        }
+
+        &:last-child {
+            font-size: 0.8rem;
+        }
+    }
+}
