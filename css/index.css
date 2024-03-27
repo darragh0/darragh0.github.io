@@ -221,6 +221,7 @@ header div:last-child p {
 #header-description-caret {
   opacity: 0;
   right: -0.2em;
+  font-size: 1.05rem;
 }
 
 @media only screen and (max-width: 600px) {
@@ -228,6 +229,8 @@ header div:last-child p {
     font-size: 3rem;
   }
   header div:last-child {
+    width: 100%;
+    text-align: center;
     font-size: 0.8rem;
   }
 }/*# sourceMappingURL=index.css.map */
