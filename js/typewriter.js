@@ -27,7 +27,7 @@ export async function del_chars(chars, element, delSpeed) {
 }
 
 
-export async function type_text(element, caret, typingSpeed, caretBlinks, text = null) {
+export async function type_text(element, typingSpeed, caretBlinks, text = null) {
 
     if (text === null)
         text = element.data("text");
@@ -48,9 +48,9 @@ export async function type_text(element, caret, typingSpeed, caretBlinks, text =
         return;
 
     async function blink() {
-        caret.css({opacity: 0});
+        element.css("--after-opacity", 0);
         await sleep(750);
-        caret.css({opacity: 1});
+        element.css("--after-opacity", 1);
     }
 
     const intervalID = setInterval(blink, 1_500);  
@@ -59,6 +59,6 @@ export async function type_text(element, caret, typingSpeed, caretBlinks, text =
     clearInterval(intervalID);
 
     await sleep(750);
-    caret.css({opacity: 0});
+    element.css("--after-opacity", 0);
 
 }

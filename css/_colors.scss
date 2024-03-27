@@ -9,6 +9,9 @@ $white: #ffffff;
 
 $blue: #596ae4;
 $teal: #17444a;
+$forest-green: #357266;
+$ash-green: #a3bbad;
+
 
 @mixin theme(
     $body,
@@ -22,6 +25,7 @@ $teal: #17444a;
 
     nav {
         background-color: $nav_bg;
+        color: $nav;
 
         div a {
             color: $nav;
@@ -50,8 +54,8 @@ $teal: #17444a;
     --secondary: #596ae4;
 }
 
-.dark-theme-teal {
-    @include theme($black, $lighter-grey, $white, $lighterer-grey, $teal);
-    --primary: #8f8f8f;
-    --secondary: #17444a;
+.light-theme-greens {
+    @include theme($white, $ash-green, $white, $lighterer-grey, $forest-green);
+    --primary: #a3bbad;
+    --secondary: #357266;
 }

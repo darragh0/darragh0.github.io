@@ -5,9 +5,9 @@ function toggle() {
 }
 
 
-function updateBlob() {
+function updateSquircle() {
 
-    let temp = $('<div></div>');
+    let temp = $("<div></div>");
     let nextTheme = THEMES[(themeIndex + 1) % THEME_COUNT]
 
     temp.addClass(nextTheme);
@@ -17,8 +17,7 @@ function updateBlob() {
     let primary = computedStyle.getPropertyValue("--primary");
     let secondary = computedStyle.getPropertyValue("--secondary");
 
-    $("#blob-path").attr("fill", primary);
-    $("#blob-path").attr("stroke", secondary);
+    $("#squircle").css("border-color", `${primary}${secondary}${secondary}${primary}`);
 
     temp.remove();
 }
@@ -27,10 +26,10 @@ function updateBlob() {
 const THEMES = [
     "dark-theme-grey",
     "light-theme-blue",
-    "dark-theme-teal",
-]
+    "light-theme-greens",
+];
 
-const THEME_COUNT = THEMES.length
+const THEME_COUNT = THEMES.length;
 const DEFAULT_THEME = THEMES[0];
 
 let themeIndex = parseInt(sessionStorage.getItem("theme-index"));
@@ -41,7 +40,7 @@ if (isNaN(themeIndex)) {
 } else
     $("body").addClass(THEMES[themeIndex]);
 
-updateBlob();
+updateSquircle();
 
 
 $(document).ready(() => {
@@ -55,7 +54,7 @@ $(document).ready(() => {
         themeIndex = ++themeIndex % THEME_COUNT;
         sessionStorage.setItem("theme-index", themeIndex);
 
-        updateBlob();
+        updateSquircle();
         $("body").addClass(THEMES[themeIndex]);
     });
 

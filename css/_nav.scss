@@ -71,10 +71,14 @@ nav {
     transform-origin: bottom left;
 }
 
-#blob {
-    width: 1em;
-    scale: 3.5;
-    translate: 0;
+#squircle {
+    width: 0;
+    height: 0;
+    padding: 0;
+    border: 0.1em solid;
+    scale: 10;
+    translate: 0.5em;
+    border-radius: 0.05em;
 }
 
 @media only screen and (max-width: 600px) {
@@ -82,8 +86,7 @@ nav {
     nav {
         grid-template-columns: auto;
     }
-
-    
+  
     .nav-left {
         grid-row-start: 1;
         grid-column: 1;

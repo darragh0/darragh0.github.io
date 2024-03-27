@@ -6,6 +6,7 @@
 }
 .dark-theme-grey nav {
   background-color: #262626;
+  color: #ffffff;
 }
 .dark-theme-grey nav div a {
   color: #ffffff;
@@ -25,6 +26,7 @@
 }
 .light-theme-blue nav {
   background-color: #596ae4;
+  color: #ffffff;
 }
 .light-theme-blue nav div a {
   color: #ffffff;
@@ -36,22 +38,23 @@
   background-color: #ffffff;
 }
 
-.dark-theme-teal {
-  color: #000000;
-  background-color: #8f8f8f;
-  --primary: #8f8f8f;
-  --secondary: #17444a;
+.light-theme-greens {
+  color: #ffffff;
+  background-color: #a3bbad;
+  --primary: #a3bbad;
+  --secondary: #357266;
 }
-.dark-theme-teal nav {
-  background-color: #17444a;
-}
-.dark-theme-teal nav div a {
+.light-theme-greens nav {
+  background-color: #357266;
   color: #ffffff;
 }
-.dark-theme-teal .nav-center a:hover {
+.light-theme-greens nav div a {
+  color: #ffffff;
+}
+.light-theme-greens .nav-center a:hover {
   color: #cccccc;
 }
-.dark-theme-teal .hamburger-bar {
+.light-theme-greens .hamburger-bar {
   background-color: #ffffff;
 }
 
@@ -125,10 +128,14 @@ nav div a {
   transform-origin: bottom left;
 }
 
-#blob {
-  width: 1em;
-  scale: 3.5;
-  translate: 0;
+#squircle {
+  width: 0;
+  height: 0;
+  padding: 0;
+  border: 0.1em solid;
+  scale: 10;
+  translate: 0.5em;
+  border-radius: 0.05em;
 }
 
 @media only screen and (max-width: 600px) {
@@ -176,61 +183,43 @@ header {
   padding: 15em 2em;
   cursor: default;
 }
-header div:first-child h1 {
-  position: relative;
-  display: inline;
+header div:last-child {
+  width: 30.5em;
+  text-align: left;
+}
+
+#header {
+  display: block;
   font-weight: 600;
   font-size: 3.5rem;
-}
-header div:last-child {
-  text-align: left;
-  width: 25.925625em;
-}
-header div:last-child p {
-  position: relative;
-  display: inline;
-  margin-top: 1em;
-  font-size: 1.05rem;
+  --after-opacity: 1;
 }
 
-@keyframes caret-fade-animation {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-.caret {
-  border: none;
-  position: absolute;
-  right: -0.15em;
-  top: -0.1em;
-}
-
-.caret-fade {
-  animation: caret-fade-animation 5s;
-}
-
-#header-caret {
-  opacity: 1;
+#header::after {
+  display: inline-block;
+  content: "|";
+  opacity: var(--after-opacity);
   font-weight: 100;
   font-size: 3.5rem;
 }
 
-#header-description-caret {
-  opacity: 0;
-  right: -0.2em;
-  font-size: 1.05rem;
+#header-description {
+  margin-top: 1em;
+  display: inline-block;
+  font-size: 1.2rem;
+  --after-opacity: 0;
+}
+
+#header-description::after {
+  display: inline-block;
+  content: "|";
+  opacity: var(--after-opacity);
+  font-size: 1.2rem;
 }
 
 @media only screen and (max-width: 600px) {
-  header div:first-child {
-    font-size: 3rem;
-  }
   header div:last-child {
-    width: 100%;
     text-align: center;
-    font-size: 0.8rem;
+    width: auto;
   }
 }/*# sourceMappingURL=index.css.map */
