@@ -52,8 +52,6 @@ $(document).ready(() => {
     $("#change-theme").click(() => {
         $("body").removeClass();
 
-        console.log(themeIndex);
-
         themeIndex = ++themeIndex % THEME_COUNT;
         sessionStorage.setItem("theme-index", themeIndex);
 

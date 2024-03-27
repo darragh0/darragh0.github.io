@@ -17,11 +17,11 @@ export function sleep(ms) {
 
 export async function del_chars(chars, element, delSpeed) {
 
-    const text = element.data("text");
+    let text = element.innerHTML
     
     for (let i = 1; i <= chars; i++) {
         await sleep(delSpeed);
-        element.text(text.substring(0, text.length - i));
+        element.innerHTML = text.substring(0, text.length - i);
     }
 
 }

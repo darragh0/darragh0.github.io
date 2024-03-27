@@ -11,9 +11,9 @@ $(document).ready(async () => {
     await type_text($("#header-description"), $("#header-description-caret"), 50, 0);
     await sleep(500);
 
-    await del_chars(4, document.getElementById("header-description"), 100);  // TODO: Fix caret
+    await del_chars(4, document.getElementById("header-description"), 100);
     await sleep(500);
 
-    await type_text($("#header-description"), $("#header-description-caret"), 100, 4, "reland.");
+    await type_text($("#header-description"), $("#header-description-caret"), 100, 5, "reland.");
 
 });
