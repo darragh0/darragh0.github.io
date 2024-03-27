@@ -35,7 +35,7 @@ const DEFAULT_THEME = THEMES[0];
 
 let themeIndex = parseInt(sessionStorage.getItem("theme-index"));
 
-if (themeIndex === null) {
+if (isNaN(themeIndex)) {
     $("body").addClass(DEFAULT_THEME);
     themeIndex = 0;
 } else
@@ -51,6 +51,8 @@ $(document).ready(() => {
 
     $("#change-theme").click(() => {
         $("body").removeClass();
+
+        console.log(themeIndex);
 
         themeIndex = ++themeIndex % THEME_COUNT;
         sessionStorage.setItem("theme-index", themeIndex);
