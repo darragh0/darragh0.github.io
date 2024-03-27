@@ -1,16 +1,69 @@
+.dark-theme-grey {
+  color: #ffffff;
+  background-color: #333333;
+  --primary: #333333;
+  --secondary: #262626;
+}
+.dark-theme-grey nav {
+  background-color: #262626;
+}
+.dark-theme-grey nav div a {
+  color: #ffffff;
+}
+.dark-theme-grey .nav-center a:hover {
+  color: #5b5b5b;
+}
+.dark-theme-grey .hamburger-bar {
+  background-color: #ffffff;
+}
+
+.light-theme-blue {
+  color: #000000;
+  background-color: #ffffff;
+  --primary: #ffffff;
+  --secondary: #596ae4;
+}
+.light-theme-blue nav {
+  background-color: #596ae4;
+}
+.light-theme-blue nav div a {
+  color: #ffffff;
+}
+.light-theme-blue .nav-center a:hover {
+  color: #cccccc;
+}
+.light-theme-blue .hamburger-bar {
+  background-color: #ffffff;
+}
+
+.dark-theme-teal {
+  color: #000000;
+  background-color: #8f8f8f;
+  --primary: #8f8f8f;
+  --secondary: #17444a;
+}
+.dark-theme-teal nav {
+  background-color: #17444a;
+}
+.dark-theme-teal nav div a {
+  color: #ffffff;
+}
+.dark-theme-teal .nav-center a:hover {
+  color: #cccccc;
+}
+.dark-theme-teal .hamburger-bar {
+  background-color: #ffffff;
+}
+
 nav {
   display: grid;
-  grid-template-columns: 1fr repeat(3, auto) 1fr;
+  grid-template-columns: 1fr repeat(4, auto) 1fr;
   justify-items: center;
   width: 100%;
-  background-color: #262626;
   padding: 0.35em 0;
 }
 nav div {
   padding: 0.5em;
-}
-nav div:first-child {
-  grid-column-start: 2;
 }
 nav div:last-child {
   margin-left: auto;
@@ -18,17 +71,16 @@ nav div:last-child {
 nav div a {
   font-size: 1.2rem;
   display: inline-block;
-  color: #ffffff;
   padding: 0 0.75em 0.1em;
   transition: color 150ms;
 }
 
-.nav-center {
-  display: block;
+.nav-left {
+  justify-self: left;
 }
 
-.nav-center a:hover {
-  color: #5b5b5b;
+.nav-center {
+  display: block;
 }
 
 .nav-current a {
@@ -50,7 +102,6 @@ nav div a {
   display: block;
   width: 1.35em;
   height: 0.135em;
-  background-color: #ffffff;
   margin: 0.3em 0;
   transition: all 200ms ease-in-out;
 }
@@ -74,14 +125,24 @@ nav div a {
   transform-origin: bottom left;
 }
 
+#blob {
+  width: 1em;
+  scale: 3.5;
+  translate: 0;
+}
+
 @media only screen and (max-width: 600px) {
   nav {
     grid-template-columns: auto;
   }
+  .nav-left {
+    grid-row-start: 1;
+    grid-column: 1;
+  }
   #hamburger {
     display: inline-block;
     grid-row-start: 1;
-    grid-column: span 2;
+    grid-column: 2;
   }
   .nav-center {
     grid-column: span 2 !important;
@@ -98,8 +159,6 @@ nav div a {
 }
 
 body {
-  color: #ffffff;
-  background-color: #333333;
   overflow-x: hidden;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
@@ -114,25 +173,53 @@ header {
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 15em 10em;
+  padding: 15em 2em;
+  cursor: default;
 }
 header div:first-child h1 {
+  position: relative;
   display: inline;
   font-weight: 600;
   font-size: 3.5rem;
 }
-header div:first-child #caret {
-  opacity: 0;
-  font-weight: 100;
-  font-size: 3.5rem;
+header div:last-child {
+  text-align: left;
+  width: 25.925625em;
 }
 header div:last-child p {
+  position: relative;
   display: inline;
-  width: 100%;
   margin-top: 1em;
   font-size: 1.05rem;
   word-break: break-word;
 }
-header div:last-child #header-description-caret {
+
+@keyframes caret-fade-animation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.caret {
+  border: none;
+  position: absolute;
+  right: -0.15em;
+  top: -0.1em;
+}
+
+.caret-fade {
+  animation: caret-fade-animation 5s;
+}
+
+#header-caret {
+  opacity: 1;
+  font-weight: 100;
+  font-size: 3.5rem;
+}
+
+#header-description-caret {
   opacity: 0;
+  right: -0.2em;
 }/*# sourceMappingURL=index.css.map */

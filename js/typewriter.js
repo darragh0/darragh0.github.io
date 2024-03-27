@@ -9,43 +9,56 @@ function find_commas(string) {
     return indices
 }
 
-export function type(text_element, caret_element, speed, pause_timeout, blink_delay, callback) {
 
-    caret_element.animate({opacity: 1});
+export function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
 
-    const text = text_element.data("text");
+
+export async function del_chars(chars, element, delSpeed) {
+
+    const text = element.data("text");
+    
+    for (let i = 1; i <= chars; i++) {
+        await sleep(delSpeed);
+        element.text(text.substring(0, text.length - i));
+    }
+
+}
+
+
+export async function type_text(element, caret, typingSpeed, caretBlinks, text = null) {
+
+    if (text === null)
+        text = element.data("text");
+    
     const comma_indices = find_commas(text);
 
-    let timeout_offset = 0
-
-    for (let i = 1; i < text.length + 1; i++) {
-        setTimeout(() =>
-            text_element.append(text[i - 1]),
-            (i * speed) + timeout_offset
-        );
+    for (let i = 0; i < text.length; i++) {
 
         if (comma_indices.includes(i))
-            timeout_offset += pause_timeout;
+            await sleep(2.5 * typingSpeed);
+
+        await sleep(typingSpeed);
+        element.append(text[i]);
+
     }
 
-    function blink_caret() {
-        caret_element.animate({opacity: 1});
-        caret_element.animate({opacity: 0});
+    if (caretBlinks === 0)
+        return;
+
+    async function blink() {
+        caret.css({opacity: 0});
+        await sleep(750);
+        caret.css({opacity: 1});
     }
 
-    // Extremely cursed ;-; ignore this pls
-    setTimeout(
-        () => {
-            const interval_id = setInterval(blink_caret, 1_500);
+    const intervalID = setInterval(blink, 1_500);  
 
-            setTimeout(() => {
-                    clearInterval(interval_id);
-                    setTimeout(() => callback(), 1_000);
-                },
-                6_000
-            );
-        },
-        blink_delay
-    );
+    await sleep((caretBlinks * 1_500) + 750);
+    clearInterval(intervalID);
+
+    await sleep(750);
+    caret.css({opacity: 0});
 
 }

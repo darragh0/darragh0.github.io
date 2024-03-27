@@ -1,23 +1,67 @@
-import {type} from "./typewriter.js";
+function toggle() {
+    $(".hamburger-bar").toggleClass("hamburger-x");
+    $("#hamburger a").toggleClass("hamburger-x-padding");
+    $(".nav-center").slideToggle(200);
+}
+
+
+function updateBlob() {
+
+    let temp = $('<div></div>');
+    let nextTheme = THEMES[(themeIndex + 1) % THEME_COUNT]
+
+    temp.addClass(nextTheme);
+    $("body").append(temp);
+
+    let computedStyle = window.getComputedStyle(temp[0]);
+    let primary = computedStyle.getPropertyValue("--primary");
+    let secondary = computedStyle.getPropertyValue("--secondary");
+
+    $("#blob-path").attr("fill", primary);
+    $("#blob-path").attr("stroke", secondary);
+
+    temp.remove();
+}
+
+
+const THEMES = [
+    "dark-theme-grey",
+    "light-theme-blue",
+    "dark-theme-teal",
+]
+
+const THEME_COUNT = THEMES.length
+const DEFAULT_THEME = THEMES[0];
+
+let themeIndex = parseInt(sessionStorage.getItem("theme-index"));
+
+if (themeIndex === null) {
+    $("body").addClass(DEFAULT_THEME);
+    themeIndex = 0;
+} else
+    $("body").addClass(THEMES[themeIndex]);
+
+updateBlob();
+
 
 $(document).ready(() => {
 
-    type($("#header"), $("#caret"), 50, 200, 0, () =>
-        type($("#header-description"), $("#header-description-caret"), 50, 250, 2_000)
-    );
-
-    let count = 0;
+    let hamburger_clicks = 0;
     let x_disabled = true;
 
-    function toggle() {
-        $(".hamburger-bar").toggleClass("hamburger-x");
-        $("#hamburger a").toggleClass("hamburger-x-padding");
-        $(".nav-center").slideToggle(200);
-    }
+    $("#change-theme").click(() => {
+        $("body").removeClass();
+
+        themeIndex = ++themeIndex % THEME_COUNT;
+        sessionStorage.setItem("theme-index", themeIndex);
+
+        updateBlob();
+        $("body").addClass(THEMES[themeIndex]);
+    });
 
     $("#hamburger a").click(() => { 
         toggle();
-        x_disabled = !(++count % 2);
+        x_disabled = !(++hamburger_clicks % 2);
     });
 
     $(window).resize(() => {

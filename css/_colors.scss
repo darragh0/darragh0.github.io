@@ -1,6 +1,57 @@
-$white: #ffffff;
+// Greyscale
 $black: #000000;
-$lighter-grey: #8f8f8f;
-$light-grey: #5b5b5b;
-$grey: #333333;
 $dark-grey: #262626;
+$grey: #333333;
+$light-grey: #5b5b5b;
+$lighter-grey: #8f8f8f;
+$lighterer-grey: #cccccc;
+$white: #ffffff;
+
+$blue: #596ae4;
+$teal: #17444a;
+
+@mixin theme(
+    $body,
+    $body_bg,
+    $nav,
+    $nav_hover,
+    $nav_bg
+) {
+    color: $body;
+    background-color: $body_bg;
+
+    nav {
+        background-color: $nav_bg;
+
+        div a {
+            color: $nav;
+        }
+    }
+
+    .nav-center a:hover {
+        color: $nav_hover;
+    }
+
+    .hamburger-bar {
+        background-color: $nav;
+    }
+
+}
+
+.dark-theme-grey {
+    @include theme($white, $grey, $white, $light-grey, $dark-grey);
+    --primary: #333333;
+    --secondary: #262626;
+}
+
+.light-theme-blue {
+    @include theme($black, $white, $white, $lighterer-grey, $blue);
+    --primary: #ffffff;
+    --secondary: #596ae4;
+}
+
+.dark-theme-teal {
+    @include theme($black, $lighter-grey, $white, $lighterer-grey, $teal);
+    --primary: #8f8f8f;
+    --secondary: #17444a;
+}

@@ -1,17 +1,12 @@
 nav {
     display: grid;
-    grid-template-columns: 1fr repeat(3, auto) 1fr;
+    grid-template-columns: 1fr repeat(4, auto) 1fr;
     justify-items: center;
     width: 100%;
-    background-color: $dark-grey;
     padding: 0.35em 0;
 
     div {
         padding: 0.5em;
-
-        &:first-child {
-            grid-column-start: 2;
-        }
 
         &:last-child {
             margin-left: auto;
@@ -20,19 +15,18 @@ nav {
         a {
             font-size: 1.2rem;
             display: inline-block;
-            color: $white;
             padding: 0 0.75em 0.1em;
             transition: color 150ms;
         }
     }
 }
 
-.nav-center {
-    display: block;
+.nav-left {
+    justify-self: left;
 }
 
-.nav-center a:hover {
-    color: $light-grey;
+.nav-center {
+    display: block;
 }
 
 .nav-current a {
@@ -54,7 +48,6 @@ nav {
     display: block; 
     width: 1.35em;
     height: 0.135em;
-    background-color: $white;
     margin: 0.3em 0;
     transition: all 200ms ease-in-out;
 }   
@@ -78,16 +71,28 @@ nav {
     transform-origin: bottom left;
 }
 
+#blob {
+    width: 1em;
+    scale: 3.5;
+    translate: 0;
+}
+
 @media only screen and (max-width: 600px) {
 
     nav {
         grid-template-columns: auto;
     }
 
+    
+    .nav-left {
+        grid-row-start: 1;
+        grid-column: 1;
+    }
+
     #hamburger {
         display: inline-block;
         grid-row-start: 1;
-        grid-column: span 2;
+        grid-column: 2;
     }   
 
     .nav-center {

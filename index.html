@@ -10,8 +10,31 @@
             src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     </head>
 
-    <body>
+    <body class="dark-theme-grey">
         <nav>
+            <div class="nav-left">
+                <a
+                    id="change-theme"
+                    href="javascript:void(0);"
+                    title="Change theme">
+                    <svg
+                        id="blob"
+                        viewBox="0 0 900 600"
+                        xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                        version="1.1">
+                        <g
+                            transform="translate(458.8997048232212 306.3510011288269)">
+                            <path
+                                id="blob-path"
+                                d="M116.9 -115.9C150.4 -83.4 175.7 -41.7 174.7 -1C173.8 39.8 146.6 79.6 113.1 109.4C79.6 139.2 39.8 159.1 -0.9 160C-41.5 160.8 -83 142.6 -120.5 112.8C-158 83 -191.5 41.5 -192.5 -1.1C-193.6 -43.6 -162.2 -87.2 -124.7 -119.7C-87.2 -152.2 -43.6 -173.6 -0.9 -172.7C41.7 -171.7 83.4 -148.4 116.9 -115.9"
+                                fill="#ffffff"
+                                stroke="#596ae4"
+                                stroke-width="35"></path>
+                        </g>
+                    </svg>
+                </a>
+            </div>
             <div class="nav-center nav-current">
                 <a href="." title="Go to home page">Home</a>
             </div>
@@ -24,7 +47,7 @@
                 >
             </div>
             <div id="hamburger">
-                <a href="javascript:void(0);">
+                <a href="javascript:void(0);" text="Toggle hamburger menu">
                     <span class="hamburger-bar"></span>
                     <span class="hamburger-bar"></span>
                     <span class="hamburger-bar"></span>
@@ -33,17 +56,21 @@
         </nav>
         <header>
             <div>
-                <h1 id="header" data-text="Hi,&nbsp;I'm&nbsp;Darragh."></h1>
-                <span id="caret">|</span>
+                <h1 id="header" data-text="Hi,&nbsp;I'm&nbsp;Darragh.">
+                    <wbr />
+                    <span class="caret" id="header-caret">|</span>
+                </h1>
             </div>
             <div>
                 <p
                     id="header-description"
-                    data-text="Software Engineering student based in Limerick, Ireland."></p>
-                <span id="header-description-caret">|</span>
+                    data-text="Software&nbsp;Engineering&nbsp;student&nbsp;based&nbsp;in&nbsp;Limerick,&nbsp;Icela">
+                    <span class="caret" id="header-description-caret">|</span>
+                </p>
             </div>
         </header>
 
-        <script type="module" src="js/main.js"></script>
+        <script type="module" src="js/index.js"></script>
+        <script type="text/javascript" src="js/main.js"></script>
     </body>
 </html>
