@@ -16,7 +16,7 @@ nav {
             font-size: 1.2rem;
             display: inline-block;
             padding: 0 0.75em 0.1em;
-            transition: color 150ms;
+            transition: color 0.3s;
         }
     }
 }
@@ -33,7 +33,6 @@ nav {
 
 .nav-current a {
     text-decoration: underline;
-    text-decoration-thickness: 0.05em;
     text-underline-position: under;
     text-underline-offset: 0.1em;
 }
@@ -43,7 +42,7 @@ nav {
 }
 
 #hamburger a {
-    transition: padding 200ms ease;
+    transition: padding 0.2s ease;
 }
 
 .hamburger-bar {
@@ -51,7 +50,7 @@ nav {
     width: 1.35em;
     height: 0.135em;
     margin: 0.3em 0;
-    transition: all 200ms ease-in-out;
+    transition: all 0.2s ease-in-out;
 }   
 
 .hamburger-x-padding {

@@ -24,9 +24,11 @@ function updateSquircle() {
 
 
 const THEMES = [
+    "dark-theme-purple",
     "dark-theme-grey",
     "light-theme-blue",
-    "light-theme-greens",
+    "light-theme-red",
+    "light-theme-green"
 ];
 
 const THEME_COUNT = THEMES.length;

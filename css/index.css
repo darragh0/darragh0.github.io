@@ -1,63 +1,3 @@
-.dark-theme-grey {
-  color: #ffffff;
-  background-color: #333333;
-  --primary: #333333;
-  --secondary: #262626;
-}
-.dark-theme-grey nav {
-  background-color: #262626;
-  color: #ffffff;
-}
-.dark-theme-grey nav div a {
-  color: #ffffff;
-}
-.dark-theme-grey .nav-center a:hover {
-  color: #5b5b5b;
-}
-.dark-theme-grey .hamburger-bar {
-  background-color: #ffffff;
-}
-
-.light-theme-blue {
-  color: #000000;
-  background-color: #ffffff;
-  --primary: #ffffff;
-  --secondary: #596ae4;
-}
-.light-theme-blue nav {
-  background-color: #596ae4;
-  color: #ffffff;
-}
-.light-theme-blue nav div a {
-  color: #ffffff;
-}
-.light-theme-blue .nav-center a:hover {
-  color: #cccccc;
-}
-.light-theme-blue .hamburger-bar {
-  background-color: #ffffff;
-}
-
-.light-theme-greens {
-  color: #ffffff;
-  background-color: #a3bbad;
-  --primary: #a3bbad;
-  --secondary: #357266;
-}
-.light-theme-greens nav {
-  background-color: #357266;
-  color: #ffffff;
-}
-.light-theme-greens nav div a {
-  color: #ffffff;
-}
-.light-theme-greens .nav-center a:hover {
-  color: #cccccc;
-}
-.light-theme-greens .hamburger-bar {
-  background-color: #ffffff;
-}
-
 nav {
   display: grid;
   grid-template-columns: 1fr repeat(4, auto) 1fr;
@@ -75,7 +15,7 @@ nav div a {
   font-size: 1.2rem;
   display: inline-block;
   padding: 0 0.75em 0.1em;
-  transition: color 150ms;
+  transition: color 0.3s;
 }
 
 .nav-left {
@@ -90,7 +30,6 @@ nav div a {
 
 .nav-current a {
   text-decoration: underline;
-  text-decoration-thickness: 0.05em;
   text-underline-position: under;
   text-underline-offset: 0.1em;
 }
@@ -100,7 +39,7 @@ nav div a {
 }
 
 #hamburger a {
-  transition: padding 200ms ease;
+  transition: padding 0.2s ease;
 }
 
 .hamburger-bar {
@@ -108,7 +47,7 @@ nav div a {
   width: 1.35em;
   height: 0.135em;
   margin: 0.3em 0;
-  transition: all 200ms ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 .hamburger-x-padding {
@@ -160,6 +99,227 @@ nav div a {
     text-align: center;
   }
 }
+.about-section {
+  padding: 7.5% 15%;
+}
+.about-section h1 {
+  font-size: 3rem;
+  font-weight: 500;
+  padding-bottom: 0.25em;
+  border-bottom: 0.05em solid;
+}
+.about-section p {
+  text-align: justify;
+  padding-top: 1.75em;
+  font-size: 1.25rem;
+}
+.about-section #about-list {
+  padding: 1em 2em;
+  display: flex;
+}
+.about-section #about-list ul {
+  font-size: 1.25rem;
+  padding-right: 7em;
+}
+
+@media only screen and (max-width: 600px) {
+  #about-list {
+    flex-direction: column;
+  }
+  #about-list ul {
+    padding-right: 0 !important;
+  }
+}
+.dark-theme-grey {
+  background-color: #333333;
+  --primary: #333333;
+  --secondary: #262626;
+}
+.dark-theme-grey nav {
+  background-color: #262626;
+  color: #ffffff;
+}
+.dark-theme-grey nav div a {
+  color: #ffffff;
+  font-weight: 400;
+}
+.dark-theme-grey .about-section h1 {
+  color: #cccccc;
+}
+.dark-theme-grey .about-section p {
+  color: #ffffff;
+}
+.dark-theme-grey .about-section ul {
+  color: #ffffff;
+}
+.dark-theme-grey .about-link {
+  color: #649cd1;
+}
+.dark-theme-grey .nav-center a:hover {
+  color: #5b5b5b;
+}
+.dark-theme-grey .hamburger-bar {
+  background-color: #ffffff;
+}
+.dark-theme-grey header {
+  color: #ffffff;
+}
+.dark-theme-grey #github-logo {
+  background-color: #ffffff;
+}
+
+.light-theme-blue {
+  background-color: #ffffff;
+  --primary: #ffffff;
+  --secondary: #596ae4;
+}
+.light-theme-blue nav {
+  background-color: #596ae4;
+  color: #ffffff;
+}
+.light-theme-blue nav div a {
+  color: #ffffff;
+  font-weight: 400;
+}
+.light-theme-blue .about-section h1 {
+  color: #000000;
+}
+.light-theme-blue .about-section p {
+  color: #000000;
+}
+.light-theme-blue .about-section ul {
+  color: #000000;
+}
+.light-theme-blue .about-link {
+  color: #649cd1;
+}
+.light-theme-blue .nav-center a:hover {
+  color: #cccccc;
+}
+.light-theme-blue .hamburger-bar {
+  background-color: #ffffff;
+}
+.light-theme-blue header {
+  color: #000000;
+}
+.light-theme-blue #github-logo {
+  background-color: #8f8f8f;
+}
+
+.light-theme-green {
+  background-color: #a3bbad;
+  --primary: #a3bbad;
+  --secondary: #357266;
+}
+.light-theme-green nav {
+  background-color: #357266;
+  color: #ffffff;
+}
+.light-theme-green nav div a {
+  color: #ffffff;
+  font-weight: 400;
+}
+.light-theme-green .about-section h1 {
+  color: #000000;
+}
+.light-theme-green .about-section p {
+  color: #000000;
+}
+.light-theme-green .about-section ul {
+  color: #000000;
+}
+.light-theme-green .about-link {
+  color: #804b16;
+}
+.light-theme-green .nav-center a:hover {
+  color: #cccccc;
+}
+.light-theme-green .hamburger-bar {
+  background-color: #ffffff;
+}
+.light-theme-green header {
+  color: #000000;
+}
+.light-theme-green #github-logo {
+  background-color: #ffffff;
+}
+
+.light-theme-red {
+  background-color: #d52941;
+  --primary: #d52941;
+  --secondary: #990d35;
+}
+.light-theme-red nav {
+  background-color: #990d35;
+  color: #ffffff;
+}
+.light-theme-red nav div a {
+  color: #ffffff;
+  font-weight: 400;
+}
+.light-theme-red .about-section h1 {
+  color: #ffffff;
+}
+.light-theme-red .about-section p {
+  color: #ffffff;
+}
+.light-theme-red .about-section ul {
+  color: #ffffff;
+}
+.light-theme-red .about-link {
+  color: #e9eb8a;
+}
+.light-theme-red .nav-center a:hover {
+  color: #8f8f8f;
+}
+.light-theme-red .hamburger-bar {
+  background-color: #ffffff;
+}
+.light-theme-red header {
+  color: #ffffff;
+}
+.light-theme-red #github-logo {
+  background-color: #ffffff;
+}
+
+.dark-theme-purple {
+  background-color: #414066;
+  --primary: #414066;
+  --secondary: #ffcad4;
+}
+.dark-theme-purple nav {
+  background-color: #ffcad4;
+  color: #000000;
+}
+.dark-theme-purple nav div a {
+  color: #000000;
+  font-weight: 600;
+}
+.dark-theme-purple .about-section h1 {
+  color: #ffcad4;
+}
+.dark-theme-purple .about-section p {
+  color: #ffffff;
+}
+.dark-theme-purple .about-section ul {
+  color: #ffffff;
+}
+.dark-theme-purple .about-link {
+  color: #649cd1;
+}
+.dark-theme-purple .nav-center a:hover {
+  color: #645da3;
+}
+.dark-theme-purple .hamburger-bar {
+  background-color: #000000;
+}
+.dark-theme-purple header {
+  color: #ffffff;
+}
+.dark-theme-purple #github-logo {
+  background-color: #ffffff;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -194,15 +354,18 @@ header div:last-child {
   padding-top: 5em;
   gap: 2em;
 }
+header div:last-child img {
+  width: 4em;
+}
 
-#header {
+#title {
   display: block;
   font-weight: 600;
   font-size: 3.5rem;
   --after-opacity: 1;
 }
 
-#header::after {
+#title::after {
   display: inline-block;
   content: "|";
   opacity: var(--after-opacity);
@@ -210,14 +373,14 @@ header div:last-child {
   font-size: 3.5rem;
 }
 
-#header-description {
+#title-description {
   margin-top: 1em;
   display: inline-block;
   font-size: 1.2rem;
   --after-opacity: 0;
 }
 
-#header-description::after {
+#title-description::after {
   display: inline-block;
   content: "|";
   opacity: var(--after-opacity);
@@ -225,25 +388,22 @@ header div:last-child {
 }
 
 @keyframes fade-in-animation {
-  0% {
+  from {
     opacity: 0;
-    translate: 0 -10em;
+    translate: 0 -5em;
   }
-  50% {
-    opacity: 0;
-  }
-  100% {
+  to {
     opacity: 1;
     translate: 0;
   }
 }
 .fade-in {
   opacity: 0;
-  animation: 3s ease 5s 1 fade-in-animation forwards;
+  animation: 3s ease 1 fade-in-animation forwards;
 }
 
 .lift-on-hover {
-  transition: translate 300ms;
+  transition: translate 0.3s;
   will-change: translate;
 }
 
@@ -253,14 +413,17 @@ header div:last-child {
 
 #github-logo {
   margin: 0;
-  background-color: #ffffff;
   border-radius: 50%;
   padding: 0.2em 0.195em 0.25em;
-  width: 4em;
+  animation-delay: 7.25s;
 }
 
 #linkedin-logo {
-  width: 4em;
+  animation-delay: 7.5s;
+}
+
+#info-logo {
+  animation-delay: 7.75s;
 }
 
 @media only screen and (max-width: 600px) {
