@@ -33,9 +33,15 @@ header {
 
     div {
         
-        &:last-child {
+        &:nth-child(2) {
             width: 30.5em;
             text-align: left;
+        }
+
+        &:last-child {
+            display: flex;
+            padding-top: 5em;
+            gap: 2em;
         }
     }
 }
@@ -69,10 +75,48 @@ header {
     font-size: 1.2rem;
 }
 
+@keyframes fade-in-animation {
+    0% {
+        opacity: 0;
+        translate: 0 -10em;
+    } 50% {
+        opacity: 0;
+    } 100% {
+        opacity: 1;
+        translate: 0;
+    }
+}
+
+.fade-in {
+    opacity: 0;
+    animation: 3s ease 5s 1 fade-in-animation forwards;
+}
+
+.lift-on-hover {
+    transition: translate 300ms;
+    will-change: translate;
+}
+
+.lift-on-hover:hover {
+    translate: 0 -1em;
+}
+
+#github-logo {
+    margin: 0;
+    background-color: $white;
+    border-radius: 50%;
+    padding: 0.2em 0.195em 0.25em;
+    width: 4em;
+}
+
+#linkedin-logo {
+    width: 4em; 
+}
+
 @media only screen and (max-width: 600px) {
     header div {
 
-        &:last-child {
+        &:nth-child(2) {
             text-align: center;
             width: auto;
         }

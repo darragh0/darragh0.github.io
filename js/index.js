@@ -3,7 +3,7 @@ import {type_text, del_chars, sleep} from "./typewriter.js";
 
 $(document).ready(async () => {
 
-    await type_text($("#header"), 75, 2);
+    await type_text($("#header"), 65, 0.1);
     await sleep(500);
 
     $("#header-description").css("--after-opacity", 1);
