@@ -1,12 +1,4 @@
-function toggle() {
-    $(".hamburger-bar").toggleClass("hamburger-x");
-    $("#hamburger a").toggleClass("hamburger-x-padding");
-    $(".nav-center").slideToggle(200);
-}
-
-
 function updateSquircle() {
-
     let temp = $("<div></div>");
     let nextTheme = THEMES[(themeIndex + 1) % THEME_COUNT]
 
@@ -16,12 +8,12 @@ function updateSquircle() {
     let computedStyle = window.getComputedStyle(temp[0]);
     let primary = computedStyle.getPropertyValue("--primary");
     let secondary = computedStyle.getPropertyValue("--secondary");
+    let accent = computedStyle.getPropertyValue("--accent-color");
 
-    $("#squircle").css("border-color", `${primary}${secondary}${secondary}${primary}`);
+    $("#squircle").css("border-color", `${primary}${accent}${secondary}${accent}`);
 
     temp.remove();
 }
-
 
 const THEMES = [
     "dark-theme-purple",
@@ -44,12 +36,28 @@ if (isNaN(themeIndex)) {
 
 updateSquircle();
 
+// Animate elements when they enter viewport
+function animateOnScroll() {
+    const elements = document.querySelectorAll('.project-card, section h2, .skill-tags span');
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.1
+    });
+
+    elements.forEach(element => {
+        observer.observe(element);
+    });
+}
 
 $(document).ready(() => {
-
-    let hamburger_clicks = 0;
-    let x_disabled = true;
-
+    // Theme toggle
     $("#change-theme").click(() => {
         $("body").removeClass();
 
@@ -60,17 +68,33 @@ $(document).ready(() => {
         $("body").addClass(THEMES[themeIndex]);
     });
 
-    $("#hamburger a").click(() => { 
-        toggle();
-        x_disabled = !(++hamburger_clicks % 2);
+    // Smooth scrolling for anchor links
+    $('a[href^="#"]').on('click', function (e) {
+        e.preventDefault();
+
+        const target = this.hash;
+        const $target = $(target);
+
+        $('html, body').animate({
+            'scrollTop': $target.offset().top
+        }, 800, 'swing');
     });
 
-    $(window).resize(() => {
-        if (window.matchMedia("(min-width: 600px)").matches) {
-            $(".nav-center").show();
-        } else if (x_disabled) {
-            $(".nav-center").hide();
-        }
-    });
+    // Initialize scroll animations
+    animateOnScroll();
 
+    // Add active class to section when scrolling
+    $(window).on('scroll', function () {
+        const scrollPosition = $(this).scrollTop();
+
+        $('section').each(function () {
+            const topDistance = $(this).offset().top - 100;
+
+            if (scrollPosition >= topDistance) {
+                const id = $(this).attr('id');
+                $('.footer-nav a').removeClass('active');
+                $('.footer-nav a[href="#' + id + '"]').addClass('active');
+            }
+        });
+    });
 });
