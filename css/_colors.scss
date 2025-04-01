@@ -8,15 +8,15 @@ $lighter-grey: #8f8f8f;
 $lighterer-grey: #cccccc;
 
 // Theme colors
-$blue: #4361EE;
-$indigo: #3A0CA3;
-$purple: #7209B7;
-$pink: #F72585;
-$coral: #FF6B6B;
-$teal: #4ECDC4;
-$green: #06D6A0;
-$yellow: #FFD166;
-$orange: #FB8500;
+$blue: #4361ee;
+$indigo: #3a0ca3;
+$purple: #7209b7;
+$pink: #f72585;
+$coral: #ff6b6b;
+$teal: #4ecdc4;
+$green: #06d6a0;
+$yellow: #ffd166;
+$orange: #fb8500;
 
 // Theme mixins
 @mixin theme(
@@ -29,18 +29,19 @@ $orange: #FB8500;
 ) {
   background-color: $background;
   color: $text-color;
-  
+
   --primary: #{$primary};
   --secondary: #{$secondary};
   --primary-rgb: #{red($primary)}, #{green($primary)}, #{blue($primary)};
   --secondary-rgb: #{red($secondary)}, #{green($secondary)}, #{blue($secondary)};
   --accent-color: #{$accent-color};
   --secondary-accent: #{$secondary-accent};
-  --accent-rgb: #{red($accent-color)}, #{green($accent-color)}, #{blue($accent-color)};
-  
+  --accent-rgb: #{red($accent-color)}, #{green($accent-color)},
+    #{blue($accent-color)};
+
   a {
     color: $text-color;
-    
+
     &:hover {
       color: $accent-color;
     }
@@ -48,61 +49,13 @@ $orange: #FB8500;
 }
 
 // Dark theme - Cyberpunk
-.dark-theme-purple {
+.dark-theme {
   @include theme(
     $primary: #120458,
-    $secondary: #331B3F,
+    $secondary: #331b3f,
     $background: #1a1a2e,
     $text-color: #e6e6e6,
-    $accent-color: #FF00A0,
-    $secondary-accent: #00F5FF
-  );
-}
-
-// Dark theme - Night
-.dark-theme-grey {
-  @include theme(
-    $primary: #222831,
-    $secondary: #393E46,
-    $background: #222831,
-    $text-color: #EEEEEE,
-    $accent-color: #00ADB5,
-    $secondary-accent: #FF5722
-  );
-}
-
-// Light theme - Ocean
-.light-theme-blue {
-  @include theme(
-    $primary: #E8F9FD,
-    $secondary: #79DAE8,
-    $background: #F1FAFF,
-    $text-color: #2E4057,
-    $accent-color: #0AA1DD,
-    $secondary-accent: #2155CD
-  );
-}
-
-// Light theme - Sunset
-.light-theme-red {
-  @include theme(
-    $primary: #F9F7F7,
-    $secondary: #FFE8D6,
-    $background: #FFF5EB,
-    $text-color: #2B2B2B,
-    $accent-color: #FF595E,
-    $secondary-accent: #FF8A5C
-  );
-}
-
-// Light theme - Nature
-.light-theme-green {
-  @include theme(
-    $primary: #FAFFF9,
-    $secondary: #DAEFD9,
-    $background: #F4FFF3,
-    $text-color: #283618,
-    $accent-color: #3A7D44,
-    $secondary-accent: #83A95C
+    $accent-color: #ff00a0,
+    $secondary-accent: #00f5ff
   );
 }

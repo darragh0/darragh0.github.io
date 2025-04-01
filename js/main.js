@@ -1,100 +1,98 @@
-function updateSquircle() {
-    let temp = $("<div></div>");
-    let nextTheme = THEMES[(themeIndex + 1) % THEME_COUNT]
-
-    temp.addClass(nextTheme);
-    $("body").append(temp);
-
-    let computedStyle = window.getComputedStyle(temp[0]);
-    let primary = computedStyle.getPropertyValue("--primary");
-    let secondary = computedStyle.getPropertyValue("--secondary");
-    let accent = computedStyle.getPropertyValue("--accent-color");
-
-    $("#squircle").css("border-color", `${primary}${accent}${secondary}${accent}`);
-
-    temp.remove();
-}
-
-const THEMES = [
-    "dark-theme-purple",
-    "dark-theme-grey",
-    "light-theme-blue",
-    "light-theme-red",
-    "light-theme-green"
-];
-
-const THEME_COUNT = THEMES.length;
-const DEFAULT_THEME = THEMES[0];
-
-let themeIndex = parseInt(sessionStorage.getItem("theme-index"));
-
-if (isNaN(themeIndex)) {
-    $("body").addClass(DEFAULT_THEME);
-    themeIndex = 0;
-} else
-    $("body").addClass(THEMES[themeIndex]);
-
-updateSquircle();
+import { sleep, del_chars, type_text } from "./typewriter.js";
 
 // Animate elements when they enter viewport
 function animateOnScroll() {
-    const elements = document.querySelectorAll('.project-card, section h2, .skill-tags span');
+  const elements = document.querySelectorAll(
+    ".project-card, section h2, .skill-tags span"
+  );
 
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('animate');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, {
-        threshold: 0.1
-    });
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("animate");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      threshold: 0.1,
+    }
+  );
 
-    elements.forEach(element => {
-        observer.observe(element);
-    });
+  elements.forEach((element) => {
+    observer.observe(element);
+  });
 }
 
-$(document).ready(() => {
-    // Theme toggle
-    $("#change-theme").click(() => {
-        $("body").removeClass();
+// Initialize everything when document is ready
+$(document).ready(async () => {
+  // Smooth scrolling for anchor links
+  $('a[href^="#"]').on("click", function (e) {
+    e.preventDefault();
 
-        themeIndex = ++themeIndex % THEME_COUNT;
-        sessionStorage.setItem("theme-index", themeIndex);
+    const target = this.hash;
+    const $target = $(target);
 
-        updateSquircle();
-        $("body").addClass(THEMES[themeIndex]);
+    $("html, body").animate(
+      {
+        scrollTop: $target.offset().top,
+      },
+      800,
+      "swing"
+    );
+  });
+
+  // Initialize scroll animations
+  animateOnScroll();
+
+  // Add active class to section when scrolling
+  $(window).on("scroll", function () {
+    const scrollPosition = $(this).scrollTop();
+
+    $("section").each(function () {
+      const topDistance = $(this).offset().top - 100;
+
+      if (scrollPosition >= topDistance) {
+        const id = $(this).attr("id");
+        $(".footer-nav a").removeClass("active");
+        $('.footer-nav a[href="#' + id + '"]').addClass("active");
+      }
     });
+  });
 
-    // Smooth scrolling for anchor links
-    $('a[href^="#"]').on('click', function (e) {
-        e.preventDefault();
+  $("#title").removeClass("cursor-hidden");
+  $("#title-description").addClass("cursor-hidden");
 
-        const target = this.hash;
-        const $target = $(target);
+  await sleep(500);
+  await type_text($("#title"), 65, 0);
+  await sleep(500);
 
-        $('html, body').animate({
-            'scrollTop': $target.offset().top
-        }, 800, 'swing');
-    });
+  $("#title").addClass("cursor-hidden");
+  $("#title-description").removeClass("cursor-hidden");
 
-    // Initialize scroll animations
-    animateOnScroll();
+  await sleep(500);
+  await type_text($("#title-description"), 50, 0);
+  await sleep(500);
 
-    // Add active class to section when scrolling
-    $(window).on('scroll', function () {
-        const scrollPosition = $(this).scrollTop();
+  await del_chars(4, document.getElementById("title-description"), 100);
+  await sleep(500);
 
-        $('section').each(function () {
-            const topDistance = $(this).offset().top - 100;
+  await type_text($("#title-description"), 100, 5, "reland.");
 
-            if (scrollPosition >= topDistance) {
-                const id = $(this).attr('id');
-                $('.footer-nav a').removeClass('active');
-                $('.footer-nav a[href="#' + id + '"]').addClass('active');
-            }
-        });
-    });
+  // Animate social links with slight delay between each
+  $(".social-links a").each(function (index) {
+    setTimeout(() => {
+      $(this).addClass("animated");
+    }, 5000 + index * 200);
+  });
+
+  // Add parallax effect to header
+  $(window).on("mousemove", function (e) {
+    const moveX = (e.pageX * -1) / 25;
+    const moveY = (e.pageY * -1) / 25;
+
+    $("header").css("--move-x", `${moveX}px`);
+    $("header").css("--move-y", `${moveY}px`);
+  });
 });

@@ -1,0 +1,877 @@
+[1] `index.html`:
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./css/index.css" />
+  <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script type="module" src="./js/main.js" defer></script>
+  <title>Darragh Luby</title>
+</head>
+
+<body class="dark-theme">
+  <header id="home">
+    <div>
+      <h1 id="title" class="cursor-hidden" data-text="Hi, I'm Darragh.">
+        <wbr />
+      </h1>
+    </div>
+    <div>
+      <p id="title-description" class="cursor-hidden" data-text="Software Engineering student based in Limerick, Icela">
+      </p>
+    </div>
+    <div class="social-links">
+      <a class="lift-on-hover" href="https://github.com/darragh0">
+        <img class="fade-in" id="github" src="./images/github.png" alt="Github Logo" />
+      </a>
+      <a class="lift-on-hover" href="https://linkedin.com/in/darraghluby">
+        <img class="fade-in" id="linkedin" src="./images/linkedin.png" alt="LinkedIn Logo" />
+      </a>
+    </div>
+    <div class="scroll-indicator">
+      <a href="#about">
+        <span class="scroll-arrow"></span>
+      </a>
+    </div>
+  </header>
+
+  <section id="about" class="about-section">
+    <h2>About Me</h2>
+    <div class="about-content">
+      <p>
+        I'm a 19-year-old software developer studying
+        <a class="about-link" href="https://software-engineering.ie">Immersive Software Engineering</a>
+        at the University of Limerick. My journey with programming
+        began at 14, starting with Python and gradually expanding to
+        web development and systems programming.
+      </p>
+      <p>
+        As a back-end enthusiast with full-stack capabilities, I
+        specialize in Python, C++, C, and Rust. My academic journey
+        has equipped me with knowledge in databases, machine
+        learning, algorithms, and software testing.
+      </p>
+    </div>
+    <div class="skills">
+      <h3>Technical Skills</h3>
+      <div class="skill-tags">
+        <span>Python</span>
+        <span>C/C++</span>
+        <span>Rust</span>
+        <span>SQL</span>
+        <span>Java</span>
+        <span>HTML/CSS</span>
+        <span>JavaScript</span>
+        <span>Git</span>
+        <span>Data Structures</span>
+        <span>Algorithms</span>
+        <span>Machine Learning</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="projects-section">
+    <h2>Projects</h2>
+    <div class="project-grid">
+      <div class="project-card">
+        <div class="project-content">
+          <h3>Personal Website</h3>
+          <p>
+            A responsive personal portfolio showcasing my skills
+            and projects using HTML, SCSS, and JavaScript.
+          </p>
+          <div class="project-tags">
+            <span>HTML</span>
+            <span>SCSS</span>
+            <span>JavaScript</span>
+          </div>
+          <a href="https://github.com/darragh0" class="project-link">View Project</a>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="project-content">
+          <h3>Data Visualization Tool</h3>
+          <p>
+            A Python application for analyzing and visualizing
+            complex datasets with interactive elements.
+          </p>
+          <div class="project-tags">
+            <span>Python</span>
+            <span>Pandas</span>
+            <span>Matplotlib</span>
+          </div>
+          <a href="https://github.com/darragh0" class="project-link">View Project</a>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="project-content">
+          <h3>Low-Level System Monitor</h3>
+          <p>
+            A resource monitoring tool built in Rust that
+            provides real-time insights into system performance.
+          </p>
+          <div class="project-tags">
+            <span>Rust</span>
+            <span>Systems Programming</span>
+          </div>
+          <a href="https://github.com/darragh0" class="project-link">View Project</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact-section">
+    <h2>Get In Touch</h2>
+    <div class="contact-content">
+      <p>
+        Interested in collaborating or have questions? Feel free to
+        reach out!
+      </p>
+      <div class="contact-links">
+        <a href="mailto:example@email.com" class="contact-button">Email Me</a>
+        <a href="https://linkedin.com/in/darraghluby" class="contact-button">LinkedIn</a>
+        <a href="https://github.com/darragh0" class="contact-button">GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2025 Darragh Luby</p>
+      <a href="https://www.flaticon.com/free-icons/computer" title="computer icons"> Favicon by Freepik &ndash; Flaticon
+      </a>
+
+      <div class="footer-nav">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+</body>
+
+</html>
+``` 
+[2] `output.txt`:
+```txt
+
+``` 
+[3] `js/typewriter.js`:
+```js
+function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+async function del_chars(chars, element, delSpeed) {
+  let text = element.innerHTML;
+
+  for (let i = 1; i <= chars; i++) {
+    await sleep(delSpeed);
+    element.innerHTML = text.substring(0, text.length - i);
+  }
+}
+
+async function type_text(element, typingSpeed, caretBlinks, text = null) {
+  if (text === null) text = element.data("text");
+
+  const comma_indices = [];
+  for (let i = 0; i < text.length; i++) {
+    if (text[i] === "," && i + 1 < text.length) comma_indices.push(i + 1);
+  }
+
+  for (let i = 0; i < text.length; i++) {
+    if (comma_indices.includes(i)) await sleep(2.5 * typingSpeed);
+
+    await sleep(typingSpeed);
+    element.append(text[i]);
+  }
+
+  // Only perform blinking if requested
+  if (caretBlinks === 0) {
+    return;
+  }
+
+  async function blink() {
+    element.addClass("cursor-hidden");
+    await sleep(750);
+    element.removeClass("cursor-hidden");
+  }
+
+  const intervalID = setInterval(blink, 1_500);
+
+  await sleep(caretBlinks * 1_500 + 750);
+  clearInterval(intervalID);
+
+  await sleep(750);
+  element.addClass("cursor-hidden");
+}
+
+export { sleep, del_chars, type_text };
+
+``` 
+[4] `js/main.js`:
+```js
+import { sleep, del_chars, type_text } from "./typewriter.js";
+
+// Animate elements when they enter viewport
+function animateOnScroll() {
+  const elements = document.querySelectorAll(
+    ".project-card, section h2, .skill-tags span"
+  );
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("animate");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      threshold: 0.1,
+    }
+  );
+
+  elements.forEach((element) => {
+    observer.observe(element);
+  });
+}
+
+// Initialize everything when document is ready
+$(document).ready(async () => {
+  // Smooth scrolling for anchor links
+  $('a[href^="#"]').on("click", function (e) {
+    e.preventDefault();
+
+    const target = this.hash;
+    const $target = $(target);
+
+    $("html, body").animate(
+      {
+        scrollTop: $target.offset().top,
+      },
+      800,
+      "swing"
+    );
+  });
+
+  // Initialize scroll animations
+  animateOnScroll();
+
+  // Add active class to section when scrolling
+  $(window).on("scroll", function () {
+    const scrollPosition = $(this).scrollTop();
+
+    $("section").each(function () {
+      const topDistance = $(this).offset().top - 100;
+
+      if (scrollPosition >= topDistance) {
+        const id = $(this).attr("id");
+        $(".footer-nav a").removeClass("active");
+        $('.footer-nav a[href="#' + id + '"]').addClass("active");
+      }
+    });
+  });
+
+  $("#title").removeClass("cursor-hidden");
+  $("#title-description").addClass("cursor-hidden");
+
+  await sleep(500);
+  await type_text($("#title"), 65, 0);
+  await sleep(500);
+
+  $("#title").addClass("cursor-hidden");
+  $("#title-description").removeClass("cursor-hidden");
+
+  await sleep(500);
+  await type_text($("#title-description"), 50, 0);
+  await sleep(500);
+
+  await del_chars(4, document.getElementById("title-description"), 100);
+  await sleep(500);
+
+  await type_text($("#title-description"), 100, 5, "reland.");
+
+  // Animate social links with slight delay between each
+  $(".social-links a").each(function (index) {
+    setTimeout(() => {
+      $(this).addClass("animated");
+    }, 5000 + index * 200);
+  });
+
+  // Add parallax effect to header
+  $(window).on("mousemove", function (e) {
+    const moveX = (e.pageX * -1) / 25;
+    const moveY = (e.pageY * -1) / 25;
+
+    $("header").css("--move-x", `${moveX}px`);
+    $("header").css("--move-y", `${moveY}px`);
+  });
+});
+
+``` 
+[5] `css/index.scss`:
+```scss
+@import "./colors";
+@import "./animations";
+
+// Base styles
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  position: relative;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+}
+
+section {
+  padding: 6rem 10%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  h2 {
+    font-size: 3rem;
+    font-weight: 500;
+    margin-bottom: 2rem;
+    position: relative;
+    display: inline-block;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 60%;
+      height: 3px;
+      background: currentColor;
+      transition: width 0.5s ease;
+    }
+
+    &:hover::after {
+      width: 100%;
+    }
+  }
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100vh;
+  padding: 2em;
+  position: relative;
+  overflow: hidden;
+  cursor: default;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg,
+        rgba(var(--primary-rgb), 0.05),
+        rgba(var(--secondary-rgb), 0.05));
+    z-index: -1;
+    transform: translate(var(--move-x, 0), var(--move-y, 0));
+  }
+
+  div {
+    &:nth-child(2) {
+      text-align: center;
+      max-width: 36em;
+    }
+  }
+}
+
+.social-links {
+  display: flex;
+  padding-top: 4em;
+  gap: 2em;
+
+  img {
+    width: 3.5em;
+    height: 3.5em;
+    object-fit: cover;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
+  img#github {
+    scale: 1.225;
+  }
+}
+
+// Title animations
+#title {
+  display: block;
+  font-weight: 700;
+  font-size: 4.5rem;
+  background: linear-gradient(45deg,
+      var(--accent-color),
+      var(--secondary-accent));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  position: relative;
+}
+
+#title-description {
+  margin-top: 1em;
+  display: inline-block;
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+
+// About section
+.about-section {
+  position: relative;
+  background: rgba(var(--primary-rgb), 0.03);
+
+  .about-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      max-width: 800px;
+    }
+  }
+
+  .about-link {
+    position: relative;
+    font-weight: 500;
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      transform: scaleX(0);
+      height: 2px;
+      bottom: -2px;
+      left: 0;
+      background-color: currentColor;
+      transform-origin: bottom right;
+      transition: transform 0.3s ease-out;
+    }
+
+    &:hover::after {
+      transform: scaleX(1);
+      transform-origin: bottom left;
+    }
+  }
+
+  .skills {
+    margin-top: 3rem;
+
+    h3 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+
+      span {
+        padding: 0.5rem 1rem;
+        background: rgba(var(--accent-rgb), 0.1);
+        border-radius: 30px;
+        font-size: 0.9rem;
+        font-weight: 500;
+        transition: all 0.3s ease;
+
+        &:hover {
+          background: rgba(var(--accent-rgb), 0.2);
+          transform: translateY(-5px);
+        }
+      }
+    }
+  }
+}
+
+// Projects section
+.projects-section {
+  background: rgba(var(--secondary-rgb), 0.03);
+
+  .project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  .project-card {
+    background: rgba(var(--primary-rgb), 0.05);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    height: 100%;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+
+    &:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+
+      .project-content {
+        background: rgba(var(--accent-rgb), 0.05);
+      }
+    }
+
+    .project-content {
+      padding: 1.5rem;
+      transition: all 0.3s ease;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+
+      h3 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+      }
+
+      p {
+        margin-bottom: 1.5rem;
+        flex-grow: 1;
+      }
+
+      .project-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-bottom: 1.5rem;
+
+        span {
+          padding: 0.3rem 0.8rem;
+          background: rgba(var(--secondary-rgb), 0.1);
+          border-radius: 20px;
+          font-size: 0.8rem;
+        }
+      }
+
+      .project-link {
+        display: inline-block;
+        padding: 0.7rem 1.5rem;
+        background: rgba(var(--accent-rgb), 0.2);
+        border-radius: 5px;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        align-self: flex-start;
+
+        &:hover {
+          background: rgba(var(--accent-rgb), 0.3);
+          transform: translateX(5px);
+        }
+      }
+    }
+  }
+}
+
+// Contact section
+.contact-section {
+  background: rgba(var(--primary-rgb), 0.03);
+  text-align: center;
+
+  .contact-content {
+    max-width: 700px;
+    margin: 0 auto;
+
+    p {
+      font-size: 1.3rem;
+      margin-bottom: 2rem;
+    }
+
+    .contact-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+
+      .contact-button {
+        padding: 0.8rem 2rem;
+        background: rgba(var(--accent-rgb), 0.2);
+        border-radius: 50px;
+        font-weight: 500;
+        transition: all 0.3s ease;
+
+        &:hover {
+          background: rgba(var(--accent-rgb), 0.3);
+          transform: scale(1.05);
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+      }
+    }
+  }
+}
+
+// Footer
+footer {
+  background: rgba(var(--primary-rgb), 0.1);
+  padding: 2rem;
+  text-align: center;
+  font-size: 0.9rem;
+
+  .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    .footer-nav {
+      display: flex;
+      gap: 1.5rem;
+
+      a {
+        opacity: 0.8;
+        transition: all 0.3s ease;
+
+        &:hover {
+          opacity: 1;
+          transform: translateY(-3px);
+        }
+      }
+    }
+  }
+}
+
+// Responsive styles
+@media only screen and (max-width: 768px) {
+  section {
+    padding: 4rem 5%;
+  }
+
+  #title {
+    font-size: 3.5rem;
+  }
+
+  #title-description {
+    font-size: 1.2rem;
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-links {
+    flex-direction: column;
+  }
+
+  footer .footer-content {
+    flex-direction: column;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  section h2 {
+    font-size: 2.5rem;
+  }
+
+  #title {
+    font-size: 2.8rem;
+  }
+
+  .social-links {
+    gap: 1em;
+
+    img {
+      width: 3em;
+    }
+  }
+}
+``` 
+[6] `css/_animations.scss`:
+```scss
+// Animation keyframes
+@keyframes bounce {
+
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0) translateX(-50%);
+  }
+
+  40% {
+    transform: translateY(-30px) translateX(-50%);
+  }
+
+  60% {
+    transform: translateY(-15px) translateX(-50%);
+  }
+}
+
+@keyframes fade-in-animation {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Animation utility classes
+.fade-in {
+  opacity: 0;
+  animation: 2s ease 1 fade-in-animation forwards;
+}
+
+.lift-on-hover {
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.lift-on-hover:hover {
+  transform: translateY(-15px) scale(1.1);
+}
+
+// Cursor visibility class
+.cursor-hidden {
+  &::after {
+    opacity: 0 !important;
+  }
+}
+
+// Element-specific animations
+.scroll-indicator {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: bounce 2s infinite;
+
+  .scroll-arrow {
+    display: block;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-bottom: 3px solid currentColor;
+    border-right: 3px solid currentColor;
+    transform: rotate(45deg);
+    opacity: 0.7;
+  }
+}
+
+#title::after {
+  display: inline-block;
+  content: "|";
+  opacity: 1;
+  font-weight: 100;
+  font-size: 4.5rem;
+  color: var(--accent-color);
+}
+
+#title-description::after {
+  display: inline-block;
+  content: "|";
+  opacity: 1;
+  font-size: 1.5rem;
+  color: var(--accent-color);
+}
+
+#github {
+  margin: 0;
+  border-radius: 50%;
+  padding: 0.2em;
+  animation-delay: 5s;
+}
+
+#linkedin {
+  animation-delay: 5.2s;
+}
+``` 
+[7] `css/_colors.scss`:
+```scss
+// Color variables
+$black: #000000;
+$white: #ffffff;
+$dark-grey: #262626;
+$grey: #333333;
+$light-grey: #5b5b5b;
+$lighter-grey: #8f8f8f;
+$lighterer-grey: #cccccc;
+
+// Theme colors
+$blue: #4361ee;
+$indigo: #3a0ca3;
+$purple: #7209b7;
+$pink: #f72585;
+$coral: #ff6b6b;
+$teal: #4ecdc4;
+$green: #06d6a0;
+$yellow: #ffd166;
+$orange: #fb8500;
+
+// Theme mixins
+@mixin theme(
+  $primary,
+  $secondary,
+  $background,
+  $text-color,
+  $accent-color,
+  $secondary-accent
+) {
+  background-color: $background;
+  color: $text-color;
+
+  --primary: #{$primary};
+  --secondary: #{$secondary};
+  --primary-rgb: #{red($primary)}, #{green($primary)}, #{blue($primary)};
+  --secondary-rgb: #{red($secondary)}, #{green($secondary)}, #{blue($secondary)};
+  --accent-color: #{$accent-color};
+  --secondary-accent: #{$secondary-accent};
+  --accent-rgb: #{red($accent-color)}, #{green($accent-color)},
+    #{blue($accent-color)};
+
+  a {
+    color: $text-color;
+
+    &:hover {
+      color: $accent-color;
+    }
+  }
+}
+
+// Dark theme - Cyberpunk
+.dark-theme {
+  @include theme(
+    $primary: #120458,
+    $secondary: #331b3f,
+    $background: #1a1a2e,
+    $text-color: #e6e6e6,
+    $accent-color: #ff00a0,
+    $secondary-accent: #00f5ff
+  );
+}
+
+``` 
