@@ -1,0 +1,115 @@
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100vh;
+  padding: 2em;
+  position: relative;
+  overflow: hidden;
+  cursor: default;
+}
+
+.social-links {
+  display: flex;
+  padding-top: 4em;
+  gap: 2em;
+  animation: fadeIn 1s ease-in-out forwards;
+
+  &__icon {
+    width: 3.5em;
+    height: 3.5em;
+    object-fit: cover;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+
+  @media only screen and (max-width: 480px) {
+    gap: 1em;
+
+    &__icon {
+      width: 3em;
+    }
+  }
+}
+
+.title {
+  display: block;
+  font-weight: 700;
+  font-size: 4.5rem;
+  background: linear-gradient(
+    45deg,
+    var(--accent-color),
+    var(--secondary-accent)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  position: relative;
+  animation: fadeIn 0.8s ease-in-out forwards;
+
+  &.cursor-bar::after {
+    display: inline-block;
+    transform: scaleX(0.5);
+  }
+
+  &__description {
+    margin-top: 1em;
+    display: inline-block;
+    font-size: 1.5rem;
+    font-weight: 300;
+    animation: fadeIn 1.2s ease-in-out forwards;
+  }
+
+  @media only screen and (max-width: 768px) {
+    font-size: 3.5rem;
+
+    &__description {
+      font-size: 1.2rem;
+    }
+  }
+
+  @media only screen and (max-width: 480px) {
+    font-size: 2.8rem;
+  }
+}
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+  width: 4rem; /* Increased hitbox size */
+  height: 4rem; /* Increased hitbox size */
+
+  &:hover {
+    opacity: 1;
+
+    /* Pause the arrow animation when hovering over hitbox */
+    .scroll-down-arrow {
+      animation-play-state: paused;
+    }
+  }
+}
+
+.scroll-down-arrow {
+  position: relative; /* Changed from absolute to relative */
+  width: 2rem;
+  height: 2rem;
+  border-right: 3px solid var(--secondary-accent);
+  border-bottom: 3px solid var(--secondary-accent);
+  transform: rotate(45deg);
+  animation: bounce 2s infinite;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+  /* Removed bottom positioning and margin auto as they're no longer needed */
+}
