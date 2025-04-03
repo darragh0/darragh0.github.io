@@ -1,8 +1,0 @@
-{
-    "files.exclude": {
-        "css/*.css": true,
-        "css/*.map": true,
-        "output.txt": true,
-        ".gitignore": true,
-    }
-}
