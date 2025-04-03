@@ -2,7 +2,7 @@ function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-async function del_chars(chars, element, delSpeed) {
+async function delChars(chars, element, delSpeed) {
   let text = element.innerHTML;
 
   for (let i = 1; i <= chars; i++) {
@@ -11,7 +11,7 @@ async function del_chars(chars, element, delSpeed) {
   }
 }
 
-async function type_text(element, typingSpeed, caretBlinks, text = null) {
+async function typeText(element, typingSpeed, caretBlinks, text = null) {
   if (text === null) text = element.data("text");
 
   const comma_indices = [];
@@ -32,9 +32,9 @@ async function type_text(element, typingSpeed, caretBlinks, text = null) {
   }
 
   async function blink() {
-    element.addClass("cursor-hidden");
+    element.removeClass("cursor-bar");
     await sleep(750);
-    element.removeClass("cursor-hidden");
+    element.addClass("cursor-bar");
   }
 
   const intervalID = setInterval(blink, 1_500);
@@ -43,7 +43,7 @@ async function type_text(element, typingSpeed, caretBlinks, text = null) {
   clearInterval(intervalID);
 
   await sleep(750);
-  element.addClass("cursor-hidden");
+  element.removeClass("cursor-bar");
 }
 
-export { sleep, del_chars, type_text };
+export { sleep, delChars, typeText };

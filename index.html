@@ -1,155 +1,392 @@
 <!DOCTYPE html>
+
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/index.css" />
+    <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+    <script
+      type="text/javascript"
+      src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script type="module" src="./js/main.js" defer></script>
+    <title>Darragh Luby</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="./css/index.css" />
-  <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
-  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-  <script type="module" src="./js/main.js" defer></script>
-  <title>Darragh Luby</title>
-</head>
-
-<body class="dark-theme">
-  <header id="home">
-    <div>
-      <h1 id="title" class="cursor-hidden" data-text="Hi, I'm Darragh.">
-        <wbr />
-      </h1>
-    </div>
-    <div>
-      <p id="title-description" class="cursor-hidden" data-text="Software Engineering student based in Limerick, Icela">
-      </p>
-    </div>
-    <div class="social-links">
-      <a class="lift-on-hover" href="https://github.com/darragh0">
-        <img class="fade-in" id="github" src="./images/github.png" alt="Github Logo" />
-      </a>
-      <a class="lift-on-hover" href="https://linkedin.com/in/darraghluby">
-        <img class="fade-in" id="linkedin" src="./images/linkedin.png" alt="LinkedIn Logo" />
-      </a>
-    </div>
-    <div class="scroll-indicator">
-      <a href="#about">
-        <span class="scroll-arrow"></span>
-      </a>
-    </div>
-  </header>
-
-  <section id="about" class="about-section">
-    <h2>About Me</h2>
-    <div class="about-content">
-      <p>
-        I'm a 19-year-old software developer studying
-        <a class="about-link" href="https://software-engineering.ie">Immersive Software Engineering</a>
-        at the University of Limerick. My journey with programming
-        began at 14, starting with Python and gradually expanding to
-        web development and systems programming.
-      </p>
-      <p>
-        As a back-end enthusiast with full-stack capabilities, I
-        specialize in Python, C++, C, and Rust. My academic journey
-        has equipped me with knowledge in databases, machine
-        learning, algorithms, and software testing.
-      </p>
-    </div>
-    <div class="skills">
-      <h3>Technical Skills</h3>
-      <div class="skill-tags">
-        <span>Python</span>
-        <span>C/C++</span>
-        <span>Rust</span>
-        <span>SQL</span>
-        <span>Java</span>
-        <span>HTML/CSS</span>
-        <span>JavaScript</span>
-        <span>Git</span>
-        <span>Data Structures</span>
-        <span>Algorithms</span>
-        <span>Machine Learning</span>
+  <body class="dark-theme">
+    <header id="home">
+      <div>
+        <h1 id="title" class="title" data-text="Hi, I'm Darragh.">
+          <wbr />
+        </h1>
       </div>
-    </div>
-  </section>
+      <div>
+        <p
+          id="title-description"
+          class="title__description"
+          data-text="Software Engineering student based in Limerick, Icela"></p>
+      </div>
+      <div class="social-links">
+        <a class="lift-on-hover" href="https://github.com/darragh0">
+          <img
+            class="social-links__icon social-links__icon--github"
+            id="github"
+            src="./images/github.png"
+            alt="Github Logo" />
+        </a>
+        <a class="lift-on-hover" href="https://linkedin.com/in/darraghluby">
+          <img
+            class="social-links__icon"
+            id="linkedin"
+            src="./images/linkedin.png"
+            alt="LinkedIn Logo" />
+        </a>
+      </div>
+      <a href="#about" class="scroll-indicator">
+        <span class="scroll-down-arrow"></span>
+      </a>
+    </header>
 
-  <section id="projects" class="projects-section">
-    <h2>Projects</h2>
-    <div class="project-grid">
-      <div class="project-card">
-        <div class="project-content">
-          <h3>Personal Website</h3>
+    <section id="about" class="about section--alt">
+      <h2 class="about__title">About Me</h2>
+      <div class="about__container">
+        <div class="about__content">
           <p>
-            A responsive personal portfolio showcasing my skills
-            and projects using HTML, SCSS, and JavaScript.
+            I'm a 20-year-old software developer studying
+            <a class="link" href="https://software-engineering.ie"
+              >Immersive Software Engineering</a
+            >
+            at the <a class="link" href="https://www.ul.ie">University of Limerick</a>. My journey with programming began at
+            15, starting with Python and gradually expanding to web development
+            and systems programming. As a back-end enthusiast with full-stack capabilities, I specialize
+            in Python, C++, C, and Rust. My academic journey has equipped me
+            with knowledge in databases, machine learning, algorithms, and
+            software testing.
           </p>
-          <div class="project-tags">
-            <span>HTML</span>
-            <span>SCSS</span>
-            <span>JavaScript</span>
+          <p>
+            I have a deep understanding of programming conventions, design patterns, 
+            memory management, and optimization techniques. I'm detail-oriented and 
+            inquisitive, always asking questions to ensure clarity. My experience at 
+            AWS and Analog Devices has strengthened my collaborative skills in professional 
+            environments, while my background in customer service has enhanced my 
+            communication abilities.
+          </p>
+        </div>
+        <div class="about__column">
+          <div class="about__image-container">
+            <img
+              src="./images/me.png"
+              alt="Darragh (me)"
+              class="about__image" />
           </div>
-          <a href="https://github.com/darragh0" class="project-link">View Project</a>
+          <p class="about__image-description">
+            Me receiving the
+            <a
+              href="https://www.ul.ie/scieng/news/immersive-software-engineering-students-receive-eu10000-in-edi-scholarships-from"
+              class="link"
+              >2023 Intercom Award</a
+            >
+          </p>
         </div>
       </div>
-      <div class="project-card">
-        <div class="project-content">
-          <h3>Data Visualization Tool</h3>
-          <p>
-            A Python application for analyzing and visualizing
-            complex datasets with interactive elements.
-          </p>
-          <div class="project-tags">
-            <span>Python</span>
-            <span>Pandas</span>
-            <span>Matplotlib</span>
-          </div>
-          <a href="https://github.com/darragh0" class="project-link">View Project</a>
+      <div class="skills">
+        <h3 class="skills__title">Technical Skills</h3>
+        <div class="skills__tags">
+          <span><i class="fa-brands fa-python"></i>Python</span>
+          <span><i class="fa-solid fa-code"></i>C/C++</span>
+          <span><i class="fa-brands fa-rust"></i>Rust</span>
+          <span><i class="fa-solid fa-database"></i>SQL</span>
+          <span><i class="fa-brands fa-java"></i>Java</span>
+          <span><i class="fa-brands fa-html5"></i>HTML/CSS/SASS</span>
+          <span><i class="fa-brands fa-js"></i>JavaScript/TypeScript</span>
+          <span><i class="fa-brands fa-git-alt"></i>Git</span>
+          <span><i class="fa-solid fa-layer-group"></i>Data Structures</span>
+          <span><i class="fa-solid fa-gears"></i>Algorithms</span>
+          <span><i class="fa-solid fa-brain"></i>Machine Learning</span>
+          <span><i class="fa-brands fa-react"></i>React</span>
+          <span><i class="fa-solid fa-flask"></i>Flask</span>
+          <span><i class="fa-brands fa-docker"></i>Docker</span>
+          <span><i class="fa-brands fa-aws"></i>AWS</span>
+          <span><i class="fa-brands fa-linux"></i>Linux</span>
         </div>
       </div>
-      <div class="project-card">
-        <div class="project-content">
-          <h3>Low-Level System Monitor</h3>
-          <p>
-            A resource monitoring tool built in Rust that
-            provides real-time insights into system performance.
-          </p>
-          <div class="project-tags">
-            <span>Rust</span>
-            <span>Systems Programming</span>
+    </section>
+
+    <section id="experience" class="experience">
+      <h2 class="experience__title">Experience</h2>
+      <div class="experience__list">
+        <div class="experience__item">
+          <div class="experience__content">
+            <div class="experience__text">
+              <h3 data-index="0">Amazon Web Services (AWS)</h3>
+              <div class="experience__meta">
+                <h4 class="experience__position">DynamoDB Software Dev. Engineer (SDE)</h4>
+                <span class="experience__duration">Sept 2024 - Jan 2025</span>
+              </div>
+              <div class="experience__description">
+                <p>
+                  Worked on improving internal tools and diagnostics for the DynamoDB team.
+                </p>
+                <ul>
+                  <li>
+                    Designed and deployed an interactive visualization of DynamoDB request timelines on an internal operational dashboard,
+                    helping engineers analyze and diagnose issues without parsing complex logs
+                  </li>
+                  <li>
+                    Collaborated with a diverse team of 12 engineers in daily stand-ups, document reviews, and sprint planning
+                  </li>
+                  <li>
+                    Contributed to the team's documentation and knowledge base for new engineers
+                  </li>
+                </ul>
+              </div>
+              <div class="experience__skills">
+                <span><i class="fa-brands fa-node-js"></i>Node.js</span>
+                <span><i class="fa-brands fa-react"></i>React</span>
+                <span><i class="fa-brands fa-js"></i>TypeScript</span>
+                <span><i class="fa-brands fa-css3"></i>CSS</span>
+                <span><i class="fa-brands fa-aws"></i>AWS</span>
+              </div>
+            </div>
+            <div class="experience__image">
+              <img src="./images/exp-0.png" alt="AWS Experience" />
+            </div>
           </div>
-          <a href="https://github.com/darragh0" class="project-link">View Project</a>
+        </div>
+
+        <div class="experience__item">
+          <div class="experience__content">
+            <div class="experience__text">
+              <h3 data-index="1">Analog Devices</h3>
+              <div class="experience__meta">
+                <h4 class="experience__position">Software Engineer</h4>
+                <span class="experience__duration">June 2024 - Sept 2024</span>
+              </div>
+              <div class="experience__description">
+                <p>
+                  Developed embedded software for secure industrial IoT sensors.
+                </p>
+                <ul>
+                  <li>
+                    Created firmware for a secure, low-power digital sensor for industrial equipment (HVAC systems)
+                  </li>
+                  <li>
+                    Implemented secure data collection and transmission protocols for diagnostic insights
+                  </li>
+                  <li>
+                    Conducted research on MQTT, UART, Root of Trust (RoT), and IoT networking technologies
+                  </li>
+                  <li>
+                    Performed testing and optimization on the AD-SWIOT1L-SL evaluation board
+                  </li>
+                </ul>
+              </div>
+              <div class="experience__skills">
+                <span><i class="fa-solid fa-code"></i>C</span>
+                <span><i class="fa-solid fa-microchip"></i>Firmware</span>
+                <span><i class="fa-solid fa-network-wired"></i>IoT</span>
+                <span><i class="fa-solid fa-lock"></i>Security</span>
+              </div>
+            </div>
+            <div class="experience__image">
+              <img
+                src="./images/exp-1.png"
+                alt="Analog Devices Experience" />
+            </div>
+          </div>
+        </div>
+
+    </section>
+
+    <section id="projects" class="projects">
+      <h2 class="projects__title">Projects</h2>
+      <div class="projects__grid">
+        <div class="project-card">
+          <div class="project-card__content">
+            <div class="project-card__text">
+              <h3 data-index="0">Personal Website</h3>
+              <div class="project-card__tags">
+                <span><i class="fa-brands fa-html5"></i>HTML</span>
+                <span><i class="fa-brands fa-sass"></i>SASS</span>
+                <span><i class="fa-brands fa-js"></i>JavaScript</span>
+              </div>
+              <p>
+                A responsive personal portfolio showcasing my skills and
+                projects using HTML,
+                <a class="link" href="https://sass-lang.com">SASS</a>, and
+                JavaScript (because who needs frontend frameworks 🤷‍♂️). The image you see here
+                is the first version of my website, which I completed in 2024.
+                The current version (this one) is a more advanced iteration of
+                this project.
+              </p>
+              <a
+                href="https://github.com/darragh0/darragh0.github.io"
+                class="link-2"
+                >View Project</a
+              >
+            </div>
+            <div class="project-card__image">
+              <img
+                src="./images/project-0.png"
+                alt="Personal Website Project"
+                class="contain-image" />
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-card__content">
+            <div class="project-card__image">
+              <img
+                src="./images/project-1.png"
+                alt="'Carrot Crusade' Project"
+                class="contain-image" />
+            </div>
+            <div class="project-card__text">
+              <h3 data-index="1">Carrot Crusade</h3>
+              <div class="project-card__tags">
+                <span><i class="fa-solid fa-code"></i>C++</span>
+                <span><i class="fa-solid fa-desktop"></i>Qt</span>
+                <span><i class="fa-solid fa-gamepad"></i>Game Dev</span>
+              </div>
+              <p>
+                An interactive adventure game built using C++ and
+                <a href="https://www.qt.io" class="link">Qt.</a>
+                You play as a carrot&mdash;stranded in a strange land&mdash;who
+                must embark on a quest to find your way back to your family at
+                your home farm, picking up clues along the way.
+              </p>
+              <p>
+                I created all the pixel art and music for this game from
+                scratch, and implemented the game logic without any external
+                game engines or frameworks (except Qt for the GUI, of course).
+                It's very simple, but is extensible enough to add new quests and
+                features should I choose to do so in the future.
+              </p>
+              <a
+                href="https://github.com/darragh0/carrot-crusade"
+                class="link-2"
+                >View Project</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-card__content">
+            <div class="project-card__text">
+              <h3 data-index="2">ClubHub</h3>
+              <div class="project-card__tags">
+                <span><i class="fa-brands fa-python"></i>Python</span>
+                <span><i class="fa-brands fa-html5"></i>HTML/CSS</span>
+                <span><i class="fa-solid fa-flask"></i>Flask</span>
+              </div>
+              <p>
+                A dynamic and user-friendly web application designed to
+                streamline the management of sports clubs. The app aims to
+                create a seamless experience for both students and coordinators
+                in organizing and participating in various sports clubs and
+                events.
+              </p>
+              <p>
+                It is build using a lightweight
+                <a href="https://flask.palletsprojects.com/en/stable">Flask</a>
+                server and
+                <a href="https://jinja.palletsprojects.com/en/stable">Jinga</a>
+                for frontend templating. The app is fully functional, and was
+                built as part of my web development project for college. It was
+                developed by a team of 3; I was responsible for the frontend
+                design and layout, along with the secure handling of form data.
+                We worked well as a team and created an impressive deliverable
+                in a short amount of time through effective collaboration and
+                communication.
+              </p>
+              <a href="https://github.com/darragh0/ClubHub" class="link-2"
+                >View Project</a
+              >
+            </div>
+            <div class="project-card__image">
+              <img
+                src="./images/project-2.png"
+                alt="System Monitor Project"
+                class="contain-image" />
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
 
-  <section id="contact" class="contact-section">
-    <h2>Get In Touch</h2>
-    <div class="contact-content">
-      <p>
-        Interested in collaborating or have questions? Feel free to
-        reach out!
-      </p>
-      <div class="contact-links">
-        <a href="mailto:example@email.com" class="contact-button">Email Me</a>
-        <a href="https://linkedin.com/in/darraghluby" class="contact-button">LinkedIn</a>
-        <a href="https://github.com/darragh0" class="contact-button">GitHub</a>
+      <div id="more-to-come">
+        <h3>More projects coming very soon...</h3>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <footer>
-    <div class="footer-content">
-      <p>&copy; 2025 Darragh Luby</p>
-      <a href="https://www.flaticon.com/free-icons/computer" title="computer icons"> Favicon by Freepik &ndash; Flaticon
-      </a>
+    <section id="contact" class="contact section--alt">
+      <h2 class="contact__title">Get In Touch</h2>
+      <div class="contact__content">
+        <p>
+          Interested in collaborating or have questions? Feel free to reach out!
+        </p>
 
-      <div class="footer-nav">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
+        <div class="contact__container">
+          <form id="contact-form" class="contact__form">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required />
+                <span class="error-message" id="name-error"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required />
+                <span class="error-message" id="email-error"></span>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="5"
+                required></textarea>
+              <span class="error-message" id="message-error"></span>
+            </div>
+
+            <button type="submit" class="link-2">Send Message</button>
+          </form>
+        </div>
       </div>
-    </div>
-</body>
+    </section>
 
+    <footer class="footer">
+      <div class="footer__content">
+        <div class="footer__info">
+          <p>&copy; 2025 Darragh Luby</p>
+          <p>Software Engineering Student</p>
+        </div>
+
+        <div class="footer__credits">
+          Icons by
+          <a
+            href="https://www.flaticon.com/free-icons"
+            class="link"
+            title="Icons"
+            >Freepik &ndash; Flaticon</a
+          >
+        </div>
+
+        <div class="footer__nav">
+          <a href="#home" class="link">Top</a>
+          <a href="#about" class="link">About</a>
+          <a href="#experience" class="link">Experience</a>
+          <a href="#projects" class="link">Projects</a>
+          <a href="#contact" class="link">Contact</a>
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>

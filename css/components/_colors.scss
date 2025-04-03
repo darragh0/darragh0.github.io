@@ -1,0 +1,29 @@
+:root {
+  // Cyberpunk theme
+  --primary: #120458;
+  --secondary: #331b3f;
+  --background: #1a1a2e;
+  --text-color: #e6e6e6;
+  --accent-color: #ff00a0;
+  --accent-color-dark: #860055;
+  --secondary-accent: #00f5ff;
+
+  --primary-rgb: 18, 4, 88;
+  --secondary-rgb: 51, 27, 63;
+  --accent-rgb: 255, 0, 160;
+  --background-rgb: 26, 26, 46;
+  --secondary-accent-rgb: 0, 245, 255;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--text-color);
+}
+
+a {
+  color: var(--text-color);
+
+  &:hover {
+    color: var(--accent-color);
+  }
+}

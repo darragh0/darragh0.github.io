@@ -1,0 +1,245 @@
+.contact {
+  &h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+
+    &::before {
+      content: "## ";
+    }
+  }
+
+  &__content {
+    max-width: 900px;
+    margin: 0;
+    animation: fadeIn 0.8s ease-in-out forwards;
+
+    p {
+      font-size: 1.3rem;
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__container {
+    background: linear-gradient(
+      145deg,
+      rgba(var(--primary-rgb), 0.35),
+      rgba(var(--accent-rgb), 0.15)
+    );
+    border-radius: 12px;
+    padding: 2.5rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    margin-bottom: 2rem;
+    border: none;
+    position: relative;
+    transition: all 0.3s ease, box-shadow 0.5s ease;
+    overflow: hidden;
+
+    /* Base border before hover */
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border-radius: 12px;
+      padding: 3px;
+      background: linear-gradient(
+        135deg,
+        rgba(var(--accent-rgb), 0.7),
+        rgba(var(--primary-rgb), 0.4),
+        rgba(var(--accent-rgb), 0.7)
+      );
+      mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask: linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      opacity: 1;
+      transition: opacity 0.5s ease, background 1.5s ease;
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    /* Hover border w/ vibrant gradient */
+    &:hover:before {
+      background: linear-gradient(
+        135deg,
+        var(--accent-color) 0%,
+        var(--secondary-accent) 33%,
+        var(--accent-color) 66%,
+        var(--secondary-accent) 100%
+      );
+      background-size: 300% 100%;
+      animation: gradientShift 6s ease infinite;
+      opacity: 1;
+    }
+
+    &:hover {
+      box-shadow: 0 0 15px rgba(var(--accent-rgb), 0.3),
+        0 0 30px rgba(var(--accent-rgb), 0.1);
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border-radius: 12px;
+      background: linear-gradient(
+        135deg,
+        rgba(var(--accent-rgb), 0) 0%,
+        rgba(var(--accent-rgb), 0.1) 50%,
+        rgba(var(--secondary-accent), 0.1) 100%
+      );
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    &:hover:after {
+      opacity: 1;
+    }
+
+    /* Ensure form above overlay */
+    &__form {
+      position: relative;
+      z-index: 2;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    animation: fadeIn 1s ease-in-out 0.3s forwards;
+
+    .form-row {
+      display: flex;
+      gap: 2rem;
+      margin-bottom: 1rem;
+
+      .form-group {
+        flex: 1;
+      }
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+
+      label {
+        font-size: 1.1rem;
+        font-weight: 500;
+        color: var(--text-color);
+      }
+
+      input,
+      textarea {
+        padding: 0.8rem 1rem;
+        background: rgba(var(--primary-rgb), 0.2);
+        border: 2px solid rgba(var(--accent-rgb), 0.3);
+        border-radius: 8px;
+        color: var(--text-color);
+        font-family: inherit;
+        transition: all 0.3s ease;
+
+        &:focus {
+          outline: none;
+          border-color: var(--accent-color);
+          box-shadow: 0 0 10px rgba(var(--accent-rgb), 0.4);
+        }
+      }
+
+      textarea {
+        resize: none;
+        min-height: 120px;
+        max-height: 250px;
+        overflow-y: auto;
+      }
+
+      .error-message {
+        color: #ff3c3c;
+        font-size: 0.9rem;
+        height: 1.2rem;
+        transition: all 0.3s ease;
+      }
+    }
+
+    .submit-btn {
+      align-self: flex-start;
+      display: inline-block;
+      padding: 0.8rem 1.6rem;
+      background: rgba(var(--accent-rgb), 0.2);
+      border: none;
+      border-radius: 5px;
+      color: var(--text-color);
+      font-weight: 500;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.2),
+          transparent
+        );
+        transition: all 0.6s ease;
+      }
+
+      &:hover {
+        background: rgba(var(--accent-rgb), 0.3);
+        transform: translateX(5px);
+
+        &::before {
+          left: 100%;
+        }
+      }
+
+      &:active {
+        transform: translateX(2px);
+      }
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+    &__links {
+      flex-direction: column;
+    }
+
+    &__container {
+      padding: 1.5rem;
+    }
+
+    &__form {
+      .form-row {
+        flex-direction: column;
+        gap: 0.5rem;
+        margin-bottom: 0;
+      }
+
+      .form-group {
+        gap: 0.3rem;
+      }
+
+      .submit-btn {
+        width: 100%;
+      }
+    }
+  }
+}

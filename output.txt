@@ -156,11 +156,7 @@
 
 </html>
 ``` 
-[2] `output.txt`:
-```txt
-
-``` 
-[3] `js/typewriter.js`:
+[2] `js/typewriter.js`:
 ```js
 function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
@@ -213,7 +209,7 @@ async function type_text(element, typingSpeed, caretBlinks, text = null) {
 export { sleep, del_chars, type_text };
 
 ``` 
-[4] `js/main.js`:
+[3] `js/main.js`:
 ```js
 import { sleep, del_chars, type_text } from "./typewriter.js";
 
@@ -303,19 +299,10 @@ $(document).ready(async () => {
       $(this).addClass("animated");
     }, 5000 + index * 200);
   });
-
-  // Add parallax effect to header
-  $(window).on("mousemove", function (e) {
-    const moveX = (e.pageX * -1) / 25;
-    const moveY = (e.pageY * -1) / 25;
-
-    $("header").css("--move-x", `${moveX}px`);
-    $("header").css("--move-y", `${moveY}px`);
-  });
 });
 
 ``` 
-[5] `css/index.scss`:
+[4] `css/index.scss`:
 ```scss
 @import "./colors";
 @import "./animations";
@@ -395,7 +382,6 @@ header {
         rgba(var(--primary-rgb), 0.05),
         rgba(var(--secondary-rgb), 0.05));
     z-index: -1;
-    transform: translate(var(--move-x, 0), var(--move-y, 0));
   }
 
   div {
@@ -708,7 +694,7 @@ footer {
   }
 }
 ``` 
-[6] `css/_animations.scss`:
+[5] `css/_animations.scss`:
 ```scss
 // Animation keyframes
 @keyframes bounce {
@@ -810,7 +796,7 @@ footer {
   animation-delay: 5.2s;
 }
 ``` 
-[7] `css/_colors.scss`:
+[6] `css/_colors.scss`:
 ```scss
 // Color variables
 $black: #000000;
