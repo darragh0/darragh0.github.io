@@ -159,6 +159,10 @@
       order: 1;
       padding-bottom: 1rem;
 
+      @media only screen and (max-width: 480px) {
+        padding: 1.5rem 1.2rem; // Reduced padding on mobile
+      }
+
       .link-2 {
         position: absolute;
         bottom: 20px; // Increased space from bottom

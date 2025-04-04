@@ -82,9 +82,6 @@ header {
 
     &__description {
       font-size: 1.1rem;
-      max-width: 85%; // Make subtitle narrower on mobile
-      margin-left: auto;
-      margin-right: auto;
     }
   }
 }
@@ -108,6 +105,10 @@ header {
     .scroll-down-arrow {
       animation-play-state: paused;
     }
+  }
+
+  @media only screen and (max-width: 480px) {
+    bottom: 3rem; /* Move up from 2rem to 3rem on mobile */
   }
 }
 

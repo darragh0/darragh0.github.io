@@ -129,23 +129,31 @@
   // Mobile
   @media only screen and (max-width: 480px) {
     &__container {
-      gap: 2rem;
+      gap: 1rem; // Reduced from 2rem to decrease spacing
     }
 
     &__image-container {
-      width: 90%;
-      min-height: 300px;
+      width: 85%; // Reduced from 90% to give less side padding
+      min-height: auto; // Remove fixed min-height that was causing white space
+      background: transparent; // Remove background to prevent any white showing
+      margin-bottom: 0.5rem; // Add a bit of space before the caption
     }
 
     &__image {
-      height: 100%;
-      object-fit: cover;
-      object-position: center top;
+      height: auto; // Let the image determine its own height
+      object-fit: contain; // Change from cover to contain
+      object-position: center; // Just use center position
+      display: block; // Ensure it's a block element
+      margin: 0; // Reset any margin that might be causing issues
     }
 
-    &__content p {
-      font-size: 1rem; // Reduce text size on mobile
-      line-height: 1.4; // Adjust line height for better readability
+    &__content {
+      padding: 0 0.8rem; // Adding slight horizontal padding on mobile
+
+      p {
+        font-size: 1rem; // Reduce text size on mobile
+        line-height: 1.4; // Adjust line height for better readability
+      }
     }
   }
 }

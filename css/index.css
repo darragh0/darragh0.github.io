@@ -340,9 +340,6 @@ header {
   }
   .title__description {
     font-size: 1.1rem;
-    max-width: 85%;
-    margin-left: auto;
-    margin-right: auto;
   }
 }
 
@@ -364,6 +361,11 @@ header {
 }
 .scroll-indicator:hover .scroll-down-arrow {
   animation-play-state: paused;
+}
+@media only screen and (max-width: 480px) {
+  .scroll-indicator {
+    bottom: 3rem; /* Move up from 2rem to 3rem on mobile */
+  }
 }
 
 .scroll-down-arrow {
@@ -490,18 +492,25 @@ header {
 }
 @media only screen and (max-width: 480px) {
   .about__container {
-    gap: 2rem;
+    gap: 1rem;
   }
   .about__image-container {
-    width: 90%;
-    min-height: 300px;
+    width: 85%;
+    min-height: auto;
+    background: transparent;
+    margin-bottom: 0.5rem;
   }
   .about__image {
-    height: 100%;
-    -o-object-fit: cover;
-       object-fit: cover;
-    -o-object-position: center top;
-       object-position: center top;
+    height: auto;
+    -o-object-fit: contain;
+       object-fit: contain;
+    -o-object-position: center;
+       object-position: center;
+    display: block;
+    margin: 0;
+  }
+  .about__content {
+    padding: 0 0.8rem;
   }
   .about__content p {
     font-size: 1rem;
@@ -717,6 +726,9 @@ header {
   }
 }
 @media only screen and (max-width: 480px) {
+  .experience__text {
+    padding: 1.5rem 1.2rem;
+  }
   .experience__text h3 {
     font-size: 1.5rem;
   }
@@ -890,6 +902,13 @@ header {
     order: 1;
     padding-bottom: 1rem;
   }
+}
+@media only screen and (max-width: 1250px) and (max-width: 480px) {
+  .project-card__text {
+    padding: 1.5rem 1.2rem;
+  }
+}
+@media only screen and (max-width: 1250px) {
   .project-card__text .link-2 {
     position: absolute;
     bottom: 20px;
