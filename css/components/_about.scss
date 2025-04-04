@@ -142,6 +142,11 @@
       object-fit: cover;
       object-position: center top;
     }
+
+    &__content p {
+      font-size: 1rem; // Reduce text size on mobile
+      line-height: 1.4; // Adjust line height for better readability
+    }
   }
 }
 
@@ -152,5 +157,9 @@
   &__title {
     font-size: 1.8rem;
     margin-bottom: 1rem;
+
+    @media only screen and (max-width: 480px) {
+      font-size: 1.5rem; // Smaller heading size on mobile
+    }
   }
 }

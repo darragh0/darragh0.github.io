@@ -33,7 +33,7 @@
   }
 
   &__text {
-    text-align: justify;
+    text-align: left; // Changed from justify to left alignment
     padding: 2rem;
     flex: 1;
     display: flex;
@@ -110,7 +110,7 @@
     padding-top: 0.2em;
     padding-right: 1em;
     font-size: 1.3rem;
-    color: var(--secondary-accent);
+    color: rgba(var(--secondary-accent-rgb), 0.6);
     margin-bottom: 0.5rem;
   }
 
@@ -139,16 +139,19 @@
       font-size: 1.05rem;
       line-height: 1.6;
       margin-bottom: 1rem;
+      text-align: left; // Explicitly setting paragraph text alignment to left
     }
 
     ul {
       list-style-type: none;
       padding-left: 1.5rem;
       margin-top: 1rem;
+      text-align: left; // Explicitly setting list text alignment to left
 
       li {
         position: relative;
         margin-bottom: 0.5rem; // Reduced from 0.8rem to 0.5rem
+        text-align: left; // Ensuring list items are left-aligned
 
         &::before {
           content: "▹";
@@ -216,6 +219,36 @@
         0.15
       ); // Reduced from 0.3 to 0.15
       box-shadow: 0 5px 10px rgba(var(--secondary-accent-rgb), 0.05); // Reduced shadow intensity
+    }
+  }
+
+  @media only screen and (max-width: 480px) {
+    &__text h3 {
+      font-size: 1.5rem; // Reduced from 1.8rem to match project card headings
+    }
+
+    &__company {
+      font-size: 1.3rem; // Reduced from 1.5rem
+    }
+
+    &__position {
+      font-size: 1.1rem; // Reduced from 1.3rem
+    }
+
+    &__description {
+      font-size: 0.95rem; // Reduced from 1.05rem
+
+      p {
+        font-size: 0.95rem; // Reduced from 1.05rem
+      }
+
+      ul li {
+        font-size: 0.95rem; // Ensuring list items match paragraph size
+      }
+    }
+
+    &__duration {
+      font-size: 0.75rem; // Slightly smaller duration badge
     }
   }
 }

@@ -294,9 +294,13 @@ header {
 @media only screen and (max-width: 480px) {
   .social-links {
     gap: 1em;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
   }
   .social-links__icon {
     width: 3em;
+    height: 3em;
+    border-radius: 50%;
   }
 }
 
@@ -333,6 +337,12 @@ header {
 @media only screen and (max-width: 480px) {
   .title {
     font-size: 2.8rem;
+  }
+  .title__description {
+    font-size: 1.1rem;
+    max-width: 85%;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
@@ -493,6 +503,10 @@ header {
     -o-object-position: center top;
        object-position: center top;
   }
+  .about__content p {
+    font-size: 1rem;
+    line-height: 1.4;
+  }
 }
 
 .skills {
@@ -502,6 +516,11 @@ header {
 .skills__title {
   font-size: 1.8rem;
   margin-bottom: 1rem;
+}
+@media only screen and (max-width: 480px) {
+  .skills__title {
+    font-size: 1.5rem;
+  }
 }
 
 .experience__list {
@@ -534,7 +553,7 @@ header {
   flex-direction: row;
 }
 .experience__text {
-  text-align: justify;
+  text-align: left;
   padding: 2rem;
   flex: 1;
   display: flex;
@@ -603,7 +622,7 @@ header {
   padding-top: 0.2em;
   padding-right: 1em;
   font-size: 1.3rem;
-  color: var(--secondary-accent);
+  color: rgba(var(--secondary-accent-rgb), 0.6);
   margin-bottom: 0.5rem;
 }
 .experience__meta {
@@ -629,15 +648,18 @@ header {
   font-size: 1.05rem;
   line-height: 1.6;
   margin-bottom: 1rem;
+  text-align: left;
 }
 .experience__description ul {
   list-style-type: none;
   padding-left: 1.5rem;
   margin-top: 1rem;
+  text-align: left;
 }
 .experience__description ul li {
   position: relative;
   margin-bottom: 0.5rem;
+  text-align: left;
 }
 .experience__description ul li::before {
   content: "▹";
@@ -692,6 +714,29 @@ header {
     transform: none;
     border-color: rgba(var(--secondary-accent-rgb), 0.15);
     box-shadow: 0 5px 10px rgba(var(--secondary-accent-rgb), 0.05);
+  }
+}
+@media only screen and (max-width: 480px) {
+  .experience__text h3 {
+    font-size: 1.5rem;
+  }
+  .experience__company {
+    font-size: 1.3rem;
+  }
+  .experience__position {
+    font-size: 1.1rem;
+  }
+  .experience__description {
+    font-size: 0.95rem;
+  }
+  .experience__description p {
+    font-size: 0.95rem;
+  }
+  .experience__description ul li {
+    font-size: 0.95rem;
+  }
+  .experience__duration {
+    font-size: 0.75rem;
   }
 }
 
