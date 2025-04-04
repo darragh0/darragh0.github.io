@@ -62,11 +62,11 @@ header {
   }
 
   &__description {
-    border: 1px solid red;
     margin-top: 1em;
     display: inline-block;
     font-size: 1.5rem;
     font-weight: 300;
+    max-width: 70vw;
     animation: fadeIn 1.2s ease-in-out forwards;
   }
 
