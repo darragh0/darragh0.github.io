@@ -320,6 +320,7 @@ header {
   transform: scaleX(0.5);
 }
 .title__description {
+  border: 1px solid red;
   margin-top: 1em;
   display: inline-block;
   font-size: 1.5rem;
