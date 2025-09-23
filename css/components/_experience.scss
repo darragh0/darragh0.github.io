@@ -11,15 +11,15 @@
     border-radius: 15px;
     overflow: hidden;
     transition: all 0.3s ease;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08); // Reduced shadow intensity
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
     transform-style: preserve-3d;
     perspective: 1000px;
-    border: 1px solid rgba(var(--secondary-accent-rgb), 0.2); // Reduced border opacity from 0.35 to 0.2
+    border: 1px solid rgba(var(--secondary-accent-rgb), 0.2);
     animation: fadeIn 0.8s ease-in-out forwards;
 
     &:hover {
-      box-shadow: 0 10px 25px rgba(var(--secondary-accent-rgb), 0.1); // Reduced shadow intensity
-      transform: translateY(-5px); // Reduced transform from -10px to -5px
+      box-shadow: 0 10px 25px rgba(var(--secondary-accent-rgb), 0.1);
+      transform: translateY(-5px);
     }
   }
 
@@ -29,11 +29,11 @@
     display: flex;
     align-items: stretch;
     min-height: 250px;
-    flex-direction: row; // text on left, image on right
+    flex-direction: row;
   }
 
   &__text {
-    text-align: left; // Changed from justify to left alignment
+    text-align: left;
     padding: 2rem;
     flex: 1;
     display: flex;
@@ -139,19 +139,19 @@
       font-size: 1.05rem;
       line-height: 1.6;
       margin-bottom: 1rem;
-      text-align: left; // Explicitly setting paragraph text alignment to left
+      text-align: left;
     }
 
     ul {
       list-style-type: none;
       padding-left: 1.5rem;
       margin-top: 1rem;
-      text-align: left; // Explicitly setting list text alignment to left
+      text-align: left;
 
       li {
         position: relative;
-        margin-bottom: 0.5rem; // Reduced from 0.8rem to 0.5rem
-        text-align: left; // Ensuring list items are left-aligned
+        margin-bottom: 0.5rem;
+        text-align: left;
 
         &::before {
           content: "▹";
@@ -170,7 +170,7 @@
       height: auto;
       display: flex;
       flex-direction: column;
-      border: 1px solid rgba(var(--secondary-accent-rgb), 0.05); // Reduced from 0.1 to 0.05
+      border: 1px solid rgba(var(--secondary-accent-rgb), 0.05);
       transition: background-color 0.3s ease, box-shadow 0.3s ease,
         border-color 0.3s ease;
     }
@@ -214,45 +214,42 @@
 
     &__item:hover {
       transform: none;
-      border-color: rgba(
-        var(--secondary-accent-rgb),
-        0.15
-      ); // Reduced from 0.3 to 0.15
-      box-shadow: 0 5px 10px rgba(var(--secondary-accent-rgb), 0.05); // Reduced shadow intensity
+      border-color: rgba(var(--secondary-accent-rgb), 0.15);
+      box-shadow: 0 5px 10px rgba(var(--secondary-accent-rgb), 0.05);
     }
   }
 
   @media only screen and (max-width: 480px) {
     &__text {
-      padding: 1.5rem 1.2rem; // Reduced padding from 2rem to 1.5rem vertical and 1.2rem horizontal
+      padding: 1.5rem 1.2rem;
     }
 
     &__text h3 {
-      font-size: 1.5rem; // Reduced from 1.8rem to match project card headings
+      font-size: 1.5rem;
     }
 
     &__company {
-      font-size: 1.3rem; // Reduced from 1.5rem
+      font-size: 1.3rem;
     }
 
     &__position {
-      font-size: 1.1rem; // Reduced from 1.3rem
+      font-size: 1.1rem;
     }
 
     &__description {
-      font-size: 0.95rem; // Reduced from 1.05rem
+      font-size: 0.95rem;
 
       p {
-        font-size: 0.95rem; // Reduced from 1.05rem
+        font-size: 0.95rem;
       }
 
       ul li {
-        font-size: 0.95rem; // Ensuring list items match paragraph size
+        font-size: 0.95rem;
       }
     }
 
     &__duration {
-      font-size: 0.75rem; // Slightly smaller duration badge
+      font-size: 0.75rem;
     }
   }
 }

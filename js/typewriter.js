@@ -26,7 +26,6 @@ async function typeText(element, typingSpeed, caretBlinks, text = null) {
     element.append(text[i]);
   }
 
-  // Only perform blinking if requested
   if (caretBlinks === 0) {
     return;
   }
@@ -46,4 +45,5 @@ async function typeText(element, typingSpeed, caretBlinks, text = null) {
   element.removeClass("cursor-bar");
 }
 
-export { sleep, delChars, typeText };
+export { delChars, sleep, typeText };
+

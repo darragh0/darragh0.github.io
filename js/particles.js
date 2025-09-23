@@ -18,11 +18,9 @@ function setupParticles() {
   }
 
   function getRainbowColor(opacity = 0.3) {
-    // Generate a random hue value (0-360)
     const hue = Math.floor(Math.random() * 360);
-    // Keep saturation high for vibrant colors but lightness high for subtlety
-    const saturation = 80 + Math.random() * 20; // 80-100%
-    const lightness = 60 + Math.random() * 20; // 60-80%
+  const saturation = 80 + Math.random() * 20;
+  const lightness = 60 + Math.random() * 20;
     return `hsla(${hue}, ${saturation}%, ${lightness}%, ${opacity})`;
   }
 
@@ -34,7 +32,7 @@ function setupParticles() {
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
         radius: Math.random() * 2 + 1,
-        color: getRainbowColor(0.3), // Use subtle rainbow colors
+  color: getRainbowColor(0.3),
         speedX: Math.random() * 0.5 - 0.25,
         speedY: Math.random() * 0.5 - 0.25,
       });

@@ -54,13 +54,11 @@
     max-width: 60%;
 
     p {
-      font-size: 1.2rem;
+      font-size: 1rem;
       line-height: 1.6;
-      text-align: justify;
     }
   }
 
-  // Large screens/desktops
   @media only screen and (max-width: 1500px) {
     &__container {
       padding-top: 3em;
@@ -72,13 +70,13 @@
     &__column {
       flex: 0 0 auto;
       width: 100%;
-      max-width: 550px; // Reduced from 700px
+      max-width: 550px;
       margin: 0 auto;
     }
 
     &__image-container {
       width: 100%;
-      max-width: 550px; // Reduced from 700px
+      max-width: 550px;
       margin: 0 auto;
     }
 
@@ -126,33 +124,32 @@
     }
   }
 
-  // Mobile
   @media only screen and (max-width: 480px) {
     &__container {
-      gap: 1rem; // Reduced from 2rem to decrease spacing
+      gap: 1rem;
     }
 
     &__image-container {
-      width: 85%; // Reduced from 90% to give less side padding
-      min-height: auto; // Remove fixed min-height that was causing white space
-      background: transparent; // Remove background to prevent any white showing
-      margin-bottom: 0.5rem; // Add a bit of space before the caption
+      width: 85%;
+      min-height: auto;
+      background: transparent;
+      margin-bottom: 0.5rem;
     }
 
     &__image {
-      height: auto; // Let the image determine its own height
-      object-fit: contain; // Change from cover to contain
-      object-position: center; // Just use center position
-      display: block; // Ensure it's a block element
-      margin: 0; // Reset any margin that might be causing issues
+      height: auto;
+      object-fit: contain;
+      object-position: center;
+      display: block;
+      margin: 0;
     }
 
     &__content {
-      padding: 0 0.8rem; // Adding slight horizontal padding on mobile
+      padding: 0 0.8rem;
 
       p {
-        font-size: 1rem; // Reduce text size on mobile
-        line-height: 1.4; // Adjust line height for better readability
+        font-size: 1rem;
+        line-height: 1.4;
       }
     }
   }
@@ -167,7 +164,7 @@
     margin-bottom: 1rem;
 
     @media only screen and (max-width: 480px) {
-      font-size: 1.5rem; // Smaller heading size on mobile
+      font-size: 1.5rem;
     }
   }
 }

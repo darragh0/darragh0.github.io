@@ -11,6 +11,36 @@ header {
   cursor: default;
 }
 
+.site-banner {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 1000;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 0.75rem;
+  border-radius: 999px;
+  background: rgba(var(--secondary-accent-rgb), 0.12);
+  color: var(--secondary-accent);
+  border: 1px solid rgba(var(--secondary-accent-rgb), 0.35);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  backdrop-filter: saturate(140%) blur(6px);
+  -webkit-backdrop-filter: saturate(140%) blur(6px);
+  animation: fadeIn 0.6s ease-out both;
+
+  i {
+    font-size: 0.95rem;
+  }
+
+  span {
+    font-weight: 600;
+    font-size: 0.95rem;
+    letter-spacing: 0.2px;
+    white-space: nowrap;
+  }
+}
+
 .social-links {
   display: flex;
   padding-top: 4em;
@@ -36,7 +66,7 @@ header {
     &__icon {
       width: 3em;
       height: 3em;
-      border-radius: 50%; // Ensure icons display as circles
+      border-radius: 50%;
     }
   }
 }
@@ -96,25 +126,24 @@ header {
   cursor: pointer;
   opacity: 0.8;
   transition: opacity 0.3s ease;
-  width: 4rem; /* Increased hitbox size */
-  height: 4rem; /* Increased hitbox size */
+  width: 4rem;
+  height: 4rem;
 
   &:hover {
     opacity: 1;
 
-    /* Pause the arrow animation when hovering over hitbox */
     .scroll-down-arrow {
       animation-play-state: paused;
     }
   }
 
   @media only screen and (max-width: 480px) {
-    bottom: 3rem; /* Move up from 2rem to 3rem on mobile */
+    bottom: 3rem;
   }
 }
 
 .scroll-down-arrow {
-  position: relative; /* Changed from absolute to relative */
+  position: relative;
   width: 2rem;
   height: 2rem;
   border-right: 3px solid var(--secondary-accent);
@@ -124,5 +153,4 @@ header {
   cursor: pointer;
   opacity: 0.8;
   transition: opacity 0.3s ease;
-  /* Removed bottom positioning and margin auto as they're no longer needed */
 }

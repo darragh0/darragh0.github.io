@@ -17,6 +17,10 @@
   </head>
 
   <body class="dark-theme">
+    <div class="site-banner" role="status" aria-live="polite">
+      <i class="fa-solid fa-wand-magic-sparkles"></i>
+      <span>New website in progress</span>
+    </div>
     <header id="home">
       <div>
         <h1 id="title" class="title" data-text="Hi, I'm Darragh.">
@@ -55,7 +59,7 @@
       <div class="about__container">
         <div class="about__content">
           <p>
-            I'm a 20-year-old software developer studying
+            I'm a 21-year-old software developer studying
             <a class="link" href="https://software-engineering.ie"
               >Immersive Software Engineering</a
             >
@@ -63,14 +67,13 @@
             15, starting with Python and gradually expanding to web development
             and systems programming. As a back-end enthusiast with full-stack capabilities, I specialize
             in Python, C++, C, and Rust. My academic journey has equipped me
-            with knowledge in databases, machine learning, algorithms, and
-            software testing.
+            with knowledge in databases, AI & ML , algorithms, testing, and functional programming, to name a few examples.
           </p>
           <p>
             I have a deep understanding of programming conventions, design patterns, 
             memory management, and optimization techniques. I'm detail-oriented and 
             inquisitive, always asking questions to ensure clarity. My experience at 
-            AWS and Analog Devices has strengthened my collaborative skills in professional 
+            Intercom, AWS and Analog Devices has strengthened my technical and collaborative skills in professional 
             environments, while my background in customer service has enhanced my 
             communication abilities.
           </p>
@@ -121,7 +124,38 @@
         <div class="experience__item">
           <div class="experience__content">
             <div class="experience__text">
-              <h3 data-index="0">Amazon Web Services (AWS)</h3>
+              <h3 data-index="0">Intercom</h3>
+              <div class="experience__meta">
+                <h4 class="experience__position">Software Engineer</h4>
+                <span class="experience__duration">June - Sept 2025</span>
+              </div>
+              <div class="experience__description">
+                <p>Worked with Team Knowledge Foundations &mdash; managing "knowledge" for customer AI chat agents and help center sites</p>
+                <ul>
+                  <li>Analysed, categorised, and resolved customer-impacting issues</li>
+                  <li>Enhanced website UI/UX for better customer experiences and content discovery</li>
+                  <li>Developed back-end features, updating APIs and databases to support new product functionality</li>
+                  <li>Implemented GDPR/CCPA-compliant cookie banner functionality</li>
+                  <li>Improved collaboration and communication across close-knit teams; participated in Intercom's 2025 Fin Hackathon</li>
+                </ul>
+              </div>
+              <div class="experience__skills">
+                <span><i class="fa-brands fa-react"></i>React</span>
+                <span><i class="fa-brands fa-js"></i>Ember.js</span>
+                <span><i class="fa-solid fa-gem"></i>Ruby/Rails</span>
+                <span><i class="fa-solid fa-search"></i>SEO</span>
+                <span><i class="fa-solid fa-bug"></i>Issue Resolution</span>
+              </div>
+            </div>
+            <div class="experience__image">
+              <img src="./images/exp-0.png" alt="Intercom Experience" />
+            </div>
+          </div>
+        </div>
+        <div class="experience__item">
+          <div class="experience__content">
+            <div class="experience__text">
+              <h3 data-index="1">Amazon Web Services (AWS)</h3>
               <div class="experience__meta">
                 <h4 class="experience__position">DynamoDB Software Dev. Engineer (SDE)</h4>
                 <span class="experience__duration">Sept 2024 - Jan 2025</span>
@@ -152,7 +186,7 @@
               </div>
             </div>
             <div class="experience__image">
-              <img src="./images/exp-0.png" alt="AWS Experience" />
+              <img src="./images/exp-1.png" alt="AWS Experience" />
             </div>
           </div>
         </div>
@@ -160,10 +194,10 @@
         <div class="experience__item">
           <div class="experience__content">
             <div class="experience__text">
-              <h3 data-index="1">Analog Devices</h3>
+              <h3 data-index="2">Analog Devices</h3>
               <div class="experience__meta">
                 <h4 class="experience__position">Software Engineer</h4>
-                <span class="experience__duration">June 2024 - Sept 2024</span>
+                <span class="experience__duration">June - Sept 2024</span>
               </div>
               <div class="experience__description">
                 <p>
@@ -193,7 +227,7 @@
             </div>
             <div class="experience__image">
               <img
-                src="./images/exp-1.png"
+                src="./images/exp-2.png"
                 alt="Analog Devices Experience" />
             </div>
           </div>
@@ -207,20 +241,16 @@
         <div class="project-card">
           <div class="project-card__content">
             <div class="project-card__text">
-              <h3 data-index="0">Personal Website</h3>
+              <h3 data-index="0">Hoppy &ndash; VS Code Extension</h3>
               <div class="project-card__tags">
-                <span><i class="fa-brands fa-html5"></i>HTML</span>
-                <span><i class="fa-brands fa-sass"></i>SASS</span>
-                <span><i class="fa-brands fa-js"></i>JavaScript</span>
+                <span><i class="fa-brands fa-js"></i>JavaScript/TypeScript</span>
               </div>
               <p>
-                A responsive personal portfolio showcasing my skills and
-                projects using HTML,
-                <a class="link" href="https://sass-lang.com">SASS</a>, and
-                JavaScript (because who needs frontend frameworks 🤷‍♂️). The image you see here
-                is the first version of my website, which I completed in 2024.
-                The current version (this one) is a more advanced iteration of
-                this project.
+                An open-source VS Code extension to quickly jump from source files to test files
+                for various languages and frameworks, including React and Ember.js. It can be easily 
+                extended for other frameworks/languages&mdash;by me, or anybody else who wishes to make a PR!
+                <br /><br />
+                You can see it on the VS Code Marketplace <a href="https://marketplace.visualstudio.com/items?itemName=darragh0.hoppy" class="link">here</a>
               </p>
               <a
                 href="https://github.com/darragh0/darragh0.github.io"
@@ -231,7 +261,7 @@
             <div class="project-card__image">
               <img
                 src="./images/project-0.png"
-                alt="Personal Website Project"
+                alt="'Hoppy' Project"
                 class="contain-image" />
             </div>
           </div>
@@ -323,44 +353,7 @@
       </div>
     </section>
 
-    <section id="contact" class="contact section--alt">
-      <h2 class="contact__title">Get In Touch</h2>
-      <div class="contact__content">
-        <p>
-          Interested in collaborating or have questions? Feel free to reach out!
-        </p>
-
-        <div class="contact__container">
-          <form id="contact-form" class="contact__form">
-            <div class="form-row">
-              <div class="form-group">
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name" required />
-                <span class="error-message" id="name-error"></span>
-              </div>
-
-              <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" required />
-                <span class="error-message" id="email-error"></span>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label for="message">Message</label>
-              <textarea
-                id="message"
-                name="message"
-                rows="5"
-                required></textarea>
-              <span class="error-message" id="message-error"></span>
-            </div>
-
-            <button type="submit" class="link-2">Send Message</button>
-          </form>
-        </div>
-      </div>
-    </section>
+    
 
     <footer class="footer">
       <div class="footer__content">
@@ -384,7 +377,6 @@
           <a href="#about" class="link">About</a>
           <a href="#experience" class="link">Experience</a>
           <a href="#projects" class="link">Projects</a>
-          <a href="#contact" class="link">Contact</a>
         </div>
       </div>
     </footer>

@@ -1,5 +1,3 @@
-// Typography and common UI components
-
 .link {
   color: inherit;
   position: relative;
@@ -24,7 +22,6 @@
   }
 }
 
-// For action buttons & project links with arrow
 .link-2 {
   display: inline-block;
   padding: 0.8rem 1.6rem;
@@ -41,7 +38,6 @@
   font-size: 1rem;
   cursor: pointer;
 
-  // Arrow indicator
   &::after {
     content: "→";
     margin-left: 8px;
@@ -50,7 +46,6 @@
     transition: transform 0.3s ease;
   }
 
-  // Shine effect
   &::before {
     content: "";
     position: absolute;
